@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Полный каталог Fish City. Прудовая рыба, оборудование, растения, раки и морепродукты.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#052b72">
+  <title>Каталог — Fish City</title>
+  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="sections.css?v=10">
+  <link rel="stylesheet" href="catalog.css?v=13">
+  <script src="app.js?v=13" defer></script>
+  <script src="shop.js?v=13" defer></script>
+</head>
+<body class="section-page" data-section="catalog">
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="brand" aria-label="Fish City — на главную"><img src="assets/logo.svg" width="100" height="65" alt="Fish City"></a>
+      <button class="menu-button" type="button" aria-controls="navigation" aria-expanded="false" hidden>Меню <span aria-hidden="true"></span></button>
+      <nav id="navigation" class="site-nav" aria-label="Основная навигация">
+        <a href="pond.html">Всё для пруда</a>
+        <a href="catalog.html" aria-current="page">Каталог</a>
+        <a href="crayfish.html">Раки</a>
+        <a href="seafood.html">Морепродукты</a>
+        <a href="construction.html">Строительство</a>
+        <a href="wholesale.html">Опт</a>
+        <a class="mobile-contact" href="#contact">Контакты</a>
+      </nav>
+      <a class="header-contact" href="#contact">Контакты</a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="section-intro catalog-intro">
+      <div class="wrap">
+        <nav class="section-crumbs" aria-label="Путь к разделу"><a href="index.html">Главная</a><span aria-hidden="true">/</span><span aria-current="page">Каталог</span></nav>
+        <div class="catalog-intro-copy"><h1>Каталог Fish City</h1><p>Демонстрационная версия</p><p data-catalog-date hidden></p></div>
+      </div>
+    </section>
+    <section class="wrap section-product-area shop" aria-labelledby="catalog-list-title">
+      <form class="catalog-filter shop-filter" id="shop-filter" action="catalog.html" hidden>
+        <label class="catalog-search-field">Товар, вид рыбы или модель
+          <input type="search" name="q" placeholder="Например, карп или CUV-J40" maxlength="100">
+        </label>
+        <label>Раздел
+          <select name="category"><option value="">Все разделы</option></select>
+        </label>
+        <label data-subcategory hidden>Категория
+          <select name="topic"><option value="">Все категории</option></select>
+        </label>
+        <button type="button" class="catalog-filter-reset" data-reset hidden>Сбросить</button>
+        <div class="catalog-volume-filter" data-pond-parameters hidden>
+          <label><input type="checkbox" name="sizeOnly"> Подходит для объёма <strong data-pond-volume></strong></label>
+          <p>Фильтр показывает модели с указанным допустимым объёмом. Для аэратора проверьте глубину в месте установки распылителя.</p>
+        </div>
+      </form>
+      <div class="catalog-list-head shop-results-head">
+        <h2 id="catalog-list-title">Все товары</h2>
+        <p class="catalog-filter-status" role="status" data-status></p>
+      </div>
+      <noscript><p>Для поиска и фильтров нужен JavaScript. <a href="catalog-index.html">Смотреть список всех товаров</a>.</p></noscript>
+      <p class="catalog-filter-empty" data-empty hidden>Товары не найдены. Измените запрос или выберите другой раздел.</p>
+      <p class="catalog-filter-empty" data-error hidden>Каталог не загрузился. <a href="catalog-index.html">Смотреть список всех товаров</a>.</p>
+      <div class="catalog-cards" id="shop-results"></div>
+      <div class="shop-more" data-more hidden>
+        <button class="button button-blue" type="button">Показать ещё</button>
+        <p data-progress></p>
+      </div>
+    </section>
+  </main>
+  <footer id="contact" class="site-footer">
+    <div class="wrap">
+      <div class="footer-main">
+        <div class="footer-contact">
+          <a class="footer-brand" href="index.html"><img src="assets/logo.svg" width="100" height="65" alt="Fish City"></a>
+          <h2>Контакты</h2>
+          <a class="button button-white" href="tel:+375299737895">+375 (29) 973-78-95</a>
+        </div>
+        <nav class="footer-links" aria-label="Разделы сайта">
+          <a href="pond.html">Всё для пруда</a>
+        <a href="catalog.html" aria-current="page">Каталог</a>
+        <a href="crayfish.html">Живые и варёные раки</a>
+        <a href="seafood.html">Рыба и морепродукты</a>
+        <a href="construction.html">Строительство прудов</a>
+        <a href="wholesale.html">Оптовые поставки</a>
+        </nav>
+        <nav class="footer-links" aria-label="Информация покупателям">
+          <a href="index.html#delivery">Доставка и оплата</a>
+          <a href="index.html#contact">Контакты Fish City</a>
+        </nav>
+      </div>
+      <div class="footer-bottom"><span>КФХ «БелАкваРост» · УНП 693340865</span><span>Демонстрационная версия Fish City</span></div>
+    </div>
+  </footer>
+</body>
+</html>
