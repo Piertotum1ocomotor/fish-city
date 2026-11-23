@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="../sections.css?v=10">
   <link rel="stylesheet" href="../catalog.css?v=13">
   <script src="../app.js?v=13" defer></script>
-  <script src="../shop.js?v=13" defer></script>
-  <script src="../product-nav.js?v=13" defer></script>
+  <link rel="stylesheet" href="../shop-product.css?v=14">
+  <script src="../product-nav.js?v=14" defer></script>
 </head>
 <body class="section-page" data-section="product">
   <a class="skip" href="#main">К содержанию</a>
@@ -34,19 +34,36 @@
   </header>
   <main id="main" class="shop-product">
     <div class="wrap">
-      <a class="shop-product-back" href="../catalog.html?category=ikra" data-back-to-catalog="6137">Вернуться в каталог</a>
+      <nav class="shop-product-trail" aria-label="Навигация по каталогу">
+        <a class="shop-product-back" href="../catalog.html?category=ikra" data-back-to-catalog="6137"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 7-5 5 5 5m-5-5h14"/></svg>Вернуться в каталог</a>
+      </nav>
       <div class="shop-product-grid">
-        <div class="shop-product-media"><div class="shop-product-image"><img src="../assets/products/191a1b0900cdafc28f5c.webp" alt="Икра кеты “Охотоморье”, 200г" decoding="async" fetchpriority="high"></div></div>
-        <div class="shop-product-summary">
-          <p class="shop-product-kicker">Икра</p>
+        <div class="shop-product-heading">
+          <div class="shop-product-kicker"><a href="../catalog.html?category=ikra">Икра</a></div>
           <h1 class="shop-product-title">Икра кеты “Охотоморье”, 200г</h1>
-          <section class="shop-product-section"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">1 шт.</span><span class="shop-offer-price">120 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
-            <p class="shop-product-date">Данные на 23.11.2026.</p>
+        </div>
+        <div class="shop-product-media" data-product-gallery><a class="shop-product-image" data-gallery-open href="../assets/products/191a1b0900cdafc28f5c.webp" aria-label="Увеличить фото товара">
+          <img src="../assets/products/191a1b0900cdafc28f5c.webp" alt="Икра кеты “Охотоморье”, 200г" decoding="async" fetchpriority="high">
+          <span class="shop-product-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="5.7"/><path d="m15 15 4 4m-8.5-11v5m-2.5-2.5h5"/></svg></span>
+        </a><dialog class="shop-gallery-viewer" aria-label="Фотографии товара">
+        <form method="dialog"><button class="shop-gallery-close" aria-label="Закрыть фото" autofocus><span aria-hidden="true">×</span></button></form>
+        <img alt="" decoding="async">
+
+      </dialog></div>
+        <div class="shop-product-summary">
+          <section class="shop-product-section shop-product-offers"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">1 шт.</span><span class="shop-offer-price">120 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
+            <p class="shop-product-date">Данные на <time datetime="2026-11-23">23.11.2026</time>.</p>
           </section>
+
+          <section class="shop-product-fulfillment" aria-label="Как получить товар">
+          <div><h2>Только доставка</h2><p>По Минску и в города Беларуси.</p></div>
+          <div class="shop-product-receiving-links"><a href="../index.html#delivery">Условия доставки</a></div>
+        </section>
         </div>
         <div class="shop-product-details">
-          <section class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>Размерный ряд</dt><dd>200 г</dd></div><div><dt>Упаковка</dt><dd>стекло</dd></div></dl></section>
-          <section class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Икра кеты — один из самых популярных и востребованных деликатесов. Зерно у неё крупное, ярко-оранжевого цвета, с нежной оболочкой и мягким, гармоничным вкусом.</p></section><details class="catalog-more"><summary>ОСНОВНОЕ</summary><p class="shop-product-description">Упаковка
+          <section id="specifications" class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>Размерный ряд</dt><dd>200 г</dd></div><div><dt>Упаковка</dt><dd>стекло</dd></div></dl></section>
+          <section id="description" class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Икра кеты — один из самых популярных и востребованных деликатесов. Зерно у неё крупное, ярко-оранжевого цвета, с нежной оболочкой и мягким, гармоничным вкусом.</p></section>
+<details class="catalog-more"><summary>ОСНОВНОЕ</summary><p class="shop-product-description">Упаковка
 стекло
 Пищевая ценность на 100 г продукта
 белки – 33 г, жиры – 13 г, углеводы – 0 г
@@ -55,7 +72,8 @@
 Состав
 икра кеты, соль, растительное масло, консерванты (Е200, Е211), влагоудерживающий агент (глицерин Е422).
 Условия и срок хранения
-хранить при температуре от -4 ℃ до -6 ℃ срок хранения не более 12 месяцев с даты производства; температура хранения икры -4 -6, а в бытовом холодильнике +4 +6, храним в нулевой зоне не больше 14 дней; с момента вскрытия банки храним не более 2 суток</p></details><details class="catalog-more"><summary>ДОПОЛНИТЕЛЬНО</summary><p class="shop-product-description">Красная икра кеты «Охотоморье» в фасовке 200 г — удобный вариант для семейного стола, праздничного застолья и приготовления холодных закусок. Такой объем подходит для бутербродов, блинов, тарталеток, канапе и красивой сервировки рыбных блюд.
+хранить при температуре от -4 ℃ до -6 ℃ срок хранения не более 12 месяцев с даты производства; температура хранения икры -4 -6, а в бытовом холодильнике +4 +6, храним в нулевой зоне не больше 14 дней; с момента вскрытия банки храним не более 2 суток</p></details>
+<details class="catalog-more"><summary>ДОПОЛНИТЕЛЬНО</summary><p class="shop-product-description">Красная икра кеты «Охотоморье» в фасовке 200 г — удобный вариант для семейного стола, праздничного застолья и приготовления холодных закусок. Такой объем подходит для бутербродов, блинов, тарталеток, канапе и красивой сервировки рыбных блюд.
 Икра кеты отличается крупными икринками, нежной текстурой и мягким, деликатным вкусом. Благодаря крупному размеру икринок она особенно эффектно смотрится при подаче и хорошо подходит для праздничного меню.
 Фасовка 200 г удобна для семьи или небольшой компании. Икру можно подавать со свежим хлебом, сливочным маслом, тостами, блинами, сливочным сыром, яйцами и другими продуктами с нейтральным вкусом, которые подчеркивают вкус самой икры.
 Икра кеты «Охотоморье» подходит как для классической подачи, так и для оформления холодных закусок. Ее можно использовать для тарталеток, канапе, бутербродов, рыбных тарелок и других блюд, где важны и вкус, и аккуратная подача.

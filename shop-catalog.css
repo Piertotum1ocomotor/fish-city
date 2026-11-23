@@ -1,0 +1,358 @@
+.fish-catalog { background: #fff; }
+.fish-catalog-intro {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(20px, 2.7vw, 42px);
+  background: linear-gradient(108deg, var(--navy) 36%, #073b91 100%);
+  color: white;
+}
+.fish-catalog-intro::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset-inline-end: -12%;
+  inset-block-start: -120%;
+  width: min(65vw, 880px);
+  aspect-ratio: 1.45;
+  border-radius: 50%;
+  background: repeating-radial-gradient(ellipse at center, transparent 0 34px, #79b5fe22 35px 36px);
+  pointer-events: none;
+  transform: rotate(-12deg);
+}
+.fish-catalog-intro-inner { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 15px 24px; }
+.fish-catalog-heading h1 {
+  font-size: clamp(2.1rem, 4.4vw, 4.6rem);
+  line-height: 1.06;
+  letter-spacing: -.063em;
+  text-wrap: initial;
+}
+.fish-catalog-heading p { margin-top: 6px; color: #e7f1ff; font-size: clamp(.98rem, 1.35vw, 1.125rem); }
+.fish-catalog-calc {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  min-height: 44px;
+  padding: 8px 13px;
+  border: 1px solid #9bbee9a8;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: .9rem;
+}
+.fish-catalog-calc:hover { background: #ffffff20; }
+.fish-search { position: relative; grid-column: 1 / -1; color: var(--navy); }
+.fish-search label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.fish-search input {
+  width: 100%;
+  min-height: 55px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  padding: 10px 53px 10px 45px;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1rem;
+  box-shadow: 0 5px 21px #021b4754;
+}
+.fish-search input::placeholder { color: #415c83; opacity: 1; }
+.fish-search input::-webkit-search-cancel-button { appearance: none; }
+.fish-search-icon {
+  position: absolute;
+  top: calc(50% - 8px);
+  left: 17px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.fish-search-icon::after {
+  position: absolute;
+  right: -5px;
+  bottom: -3px;
+  width: 7px;
+  height: 2px;
+  background: var(--blue);
+  transform: rotate(47deg);
+  content: "";
+}
+.fish-search button {
+  position: absolute;
+  inset: 5px 6px 5px auto;
+  min-width: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: var(--ice);
+  color: var(--navy);
+  font-size: 1.5rem;
+}
+.fish-departments { display: grid; grid-template-columns: 1.18fr 1.03fr 1fr .94fr 1fr 1.1fr; gap: 11px; margin-block: 20px 0; }
+.fish-departments a {
+  position: relative;
+  display: flex;
+  align-items: end;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: clamp(105px, 10.9vw, 155px);
+  padding: 10px 11px;
+  border-radius: 12px;
+  background: var(--navy);
+  color: white;
+  font-family: var(--display-font);
+  font-size: clamp(.9rem, 1.5vw, 1.12rem);
+  font-weight: 800;
+  line-height: 1.16;
+  text-decoration: none;
+}
+.fish-departments a:first-child { --department-position: 47%; }
+.fish-departments img,
+.fish-departments a::before { position: absolute; inset: 0; width: 100%; height: 100%; }
+.fish-departments img { z-index: -2; object-fit: cover; object-position: center var(--department-position, 50%); transition: transform .26s ease; }
+.fish-departments a::before { z-index: -1; background: linear-gradient(180deg, #04265617, #032150ec 100%); content: ""; }
+.fish-departments a:hover img { transform: scale(1.06); }
+
+.fish-shop { display: grid; grid-template-columns: minmax(160px, 215px) minmax(0, 1fr); gap: 16px 24px; padding-block: 22px clamp(48px, 6vw, 87px); }
+.fish-shop-controls { display: flex; justify-content: end; align-items: center; gap: 10px; grid-column: 2; grid-row: 1; min-width: 0; }
+.fish-results { min-width: 0; grid-column: 2; grid-row: 2; }
+.fish-filters { grid-column: 1; grid-row: 1 / span 2; align-self: start; padding: 16px 13px; border: 1px solid var(--border); border-radius: 13px; background: #f6f9ff; }
+.fish-filters h2 { margin: 0 0 6px; color: var(--navy); font-size: .98rem; }
+.fish-section-list { display: grid; gap: 1px; }
+.fish-section-list a {
+  display: block;
+  align-content: center;
+  min-height: 42px;
+  padding: 6px 8px;
+  border-radius: 7px;
+  color: var(--ink);
+  font-size: .93rem;
+  line-height: 1.25;
+  text-decoration: none;
+}
+.fish-section-list a:hover { background: #e9f1ff; color: var(--navy); }
+.fish-section-list a[aria-current] { background: #dfebff; color: var(--navy); font-weight: 700; }
+.fish-facets { display: grid; gap: 6px; margin-top: 10px; padding: 14px 0 0; border-top: 1px solid var(--border); }
+.fish-facets h2 { margin-bottom: 0; }
+.fish-facet, .fish-sort { display: grid; gap: 3px; color: var(--navy); font-size: .85rem; font-weight: 700; }
+.fish-facet select, .fish-sort select {
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 6px 9px;
+  border: 1px solid #b0c8ef;
+  border-radius: 8px;
+  background: white;
+  color: var(--navy);
+  font: inherit;
+  font-size: .97rem;
+}
+.fish-sort { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.fish-option { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; min-height: 42px; color: var(--navy); font-size: .95rem; cursor: pointer; }
+.fish-option input { margin: 0; width: 18px; height: 18px; accent-color: var(--blue); }
+.fish-button {
+  display: inline-grid;
+  align-content: center;
+  min-height: 44px;
+  padding: 7px 14px;
+  border: 1px solid #b0c8ef;
+  border-radius: 8px;
+  background: white;
+  color: var(--navy);
+  font-weight: 750;
+  line-height: 1.2;
+  text-decoration: none;
+}
+.fish-button:hover { background: #eaf2ff; border-color: var(--blue); }
+.fish-filter-toggle, .fish-show-results { display: none; }
+.fish-results-head { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 4px 14px; min-height: 36px; margin-bottom: 14px; }
+.fish-results-head h2 { color: var(--navy); font-size: clamp(1.55rem, 2.8vw, 2.7rem); line-height: 1.07; letter-spacing: -.04em; text-wrap: pretty; }
+.fish-result-count { color: var(--muted); font-size: .92rem; }
+.fish-crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 8px; margin-bottom: 4px; color: var(--muted); font-size: .83rem; }
+.fish-crumbs a { display: inline-flex; align-items: center; min-height: 32px; text-underline-offset: 3px; }
+.fish-subcategories { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.fish-subcategories a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: #f4f8ff;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: .9rem;
+  line-height: 1.2;
+  text-decoration: none;
+}
+.fish-subcategories a:hover, .fish-subcategories a[aria-current] { border-color: #8bb5ed; background: #e2edff; }
+.fish-subcategories small { color: var(--muted); font-size: .78rem; font-weight: 600; }
+.fish-subcategories details { width: 100%; }
+.fish-subcategories summary { width: fit-content; min-height: 44px; align-content: center; color: var(--navy); font-size: .91rem; cursor: pointer; }
+.fish-subcategories details div { display: flex; flex-wrap: wrap; gap: 6px; }
+.fish-volume { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 10px; margin-bottom: 13px; padding: 8px 11px 9px; border-left: 3px solid var(--blue); border-radius: 8px; background: var(--ice); }
+.fish-volume label { font-weight: 700; }
+.fish-volume p { color: var(--muted); font-size: .84rem; }
+.fish-volume a { display: inline-flex; align-items: center; min-height: 42px; color: var(--navy); font-size: .91rem; font-weight: 700; text-underline-offset: 3px; }
+.fish-active-filters { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px 10px; margin-bottom: 13px; }
+.fish-active-filters > div { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; min-width: 0; }
+.fish-active-filters button { min-height: 42px; border: 0; border-radius: 8px; color: var(--navy); overflow-wrap: anywhere; }
+.fish-active-filters .fish-chip { padding: 6px 9px; background: var(--ice); font-size: .86rem; text-align: left; }
+.fish-active-filters .fish-chip span { margin-left: 5px; color: var(--blue); }
+.fish-active-filters > button { padding-inline: 7px; background: white; font-size: .88rem; text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+.fish-active-filters button:hover { background: #e2edff; }
+.fish-empty {
+  margin-bottom: 13px;
+  padding: 24px;
+  border: 1px dashed #afc8ee;
+  border-radius: 12px;
+  background: #f6f9ff;
+  color: var(--muted);
+}
+.fish-empty h3 { color: var(--navy); font-size: 1.25rem; }
+.fish-empty .fish-button { margin-top: 12px; }
+.fish-catalog-date { margin-top: 24px; color: var(--muted); font-size: .86rem; }
+.fish-product-list { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 11px; }
+.fish-product-list .catalog-card { display: flex; flex-direction: column; border-radius: 12px; }
+.fish-product-list .catalog-card > a { height: auto; flex: 1; }
+.fish-product-list .catalog-card-photo { aspect-ratio: 1.4; padding: 8px; background: #f2f6fc; }
+.fish-product-list .catalog-card-copy { gap: 6px; padding: 10px 11px 12px; }
+.fish-product-list .shop-card-category { color: #364e72; font-size: .76rem; line-height: 1.31; }
+.fish-product-list .catalog-card-copy h3 { font-size: clamp(.91rem, 1.25vw, 1.12rem); line-height: 1.29; }
+.fish-card-facts { display: flex; flex-wrap: wrap; gap: 3px 7px; margin: 0 0 4px; padding: 0; list-style: none; color: #375176; }
+.fish-card-facts li { min-width: 0; font-size: .79rem; line-height: 1.3; overflow-wrap: anywhere; }
+.fish-product-list .catalog-card-price { font-size: clamp(.99rem, 1.33vw, 1.23rem); line-height: 1.21; }
+.fish-product-list .shop-card-stock { width: fit-content; color: #4c5871; font-size: .82rem; line-height: 1.25; }
+.fish-product-list .shop-card-stock[data-state="in"] { color: var(--navy); }
+.fish-product-list .shop-card-stock[data-state="in"]::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 5px; border-radius: 50%; background: var(--cyan); vertical-align: 2px; }
+.fish-card-compare {
+  min-height: 44px;
+  margin: 0 10px 9px;
+  padding: 4px 8px;
+  border: 1px solid #c2d5f2;
+  border-radius: 8px;
+  background: #f4f8ff;
+  color: var(--navy);
+  font-size: .85rem;
+  font-weight: 700;
+}
+.fish-card-compare:hover, .fish-card-compare[aria-pressed="true"] { background: #e2edff; border-color: #8ab2e9; }
+.fish-card-compare[aria-pressed="true"]::before { content: "✓ "; }
+.fish-compare-bar {
+  position: fixed;
+  z-index: 5;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 6px 0 max(6px, env(safe-area-inset-bottom));
+  background: var(--navy);
+  color: white;
+  box-shadow: 0 -4px 15px #052b7224;
+}
+.fish-compare-bar .wrap, .fish-compare-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; }
+.fish-compare-bar button { min-height: 44px; padding: 5px 10px; border: 1px solid white; border-radius: 8px; background: white; color: var(--navy); font-size: .87rem; font-weight: 750; }
+.fish-compare-bar button:first-child { background: transparent; color: white; }
+.fish-compare-bar button:disabled { opacity: .59; cursor: default; }
+.fish-compare-dialog {
+  position: fixed;
+  width: min(760px, calc(100% - 24px));
+  max-height: 85vh;
+  padding: clamp(10px, 3vw, 24px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: white;
+  color: var(--ink);
+}
+.fish-compare-dialog::backdrop { background: #031c47a8; }
+.fish-compare-heading { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
+.fish-compare-heading h2 { color: var(--navy); font-size: clamp(1.12rem, 4vw, 1.6rem); text-wrap: initial; }
+.fish-compare-dialog > p { margin: 5px 0; color: var(--muted); font-size: .85rem; }
+.fish-compare-scroll { overflow-x: auto; padding: 7px 1px; }
+.fish-compare-scroll table { min-width: 100%; border-collapse: collapse; text-align: left; }
+.fish-compare-scroll th, .fish-compare-scroll td { min-width: 112px; padding: 8px 6px; border-bottom: 1px solid var(--border); vertical-align: top; font-size: .88rem; }
+.fish-compare-scroll th a { color: var(--navy); text-underline-offset: 3px; }
+.fish-compare-scroll tbody th { color: var(--muted); }
+@media (min-width: 761px) {
+  .fish-shop-controls { margin-bottom: -7px; }
+}
+@media (max-width: 1180px) {
+  .fish-product-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .fish-departments { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .fish-departments a { min-height: clamp(67px, 11vw, 100px); }
+  .fish-shop { grid-template-columns: minmax(140px, 174px) minmax(0, 1fr); gap: 13px; }
+}
+@media (max-width: 760px) {
+  .fish-catalog-intro { padding-block: 19px; }
+  .fish-catalog-intro-inner { grid-template-columns: minmax(0, 1fr); gap: 9px; }
+  .fish-catalog-heading p { margin-top: 4px; font-size: .96rem; line-height: 1.33; }
+  .fish-search { grid-row: 2; }
+  .fish-search input { min-height: 49px; padding-inline: 39px 38px; }
+  .fish-search-icon { left: 14px; }
+  .fish-search button { inset: 3px 3px 3px auto; }
+  .fish-catalog-calc { padding: 0; border: 0; text-decoration: underline; text-underline-offset: 3px; font-size: .88rem; }
+  .fish-departments { margin-top: 12px; }
+  .fish-departments a { padding: 7px 6px; border-radius: 9px; font-size: clamp(.78rem, 2.85vw, .98rem); }
+  .fish-shop { grid-template-columns: minmax(0, 1fr); padding-top: 16px; }
+  .fish-shop-controls { grid-column: 1; grid-row: 1; justify-content: space-between; }
+  .fish-shop-controls .fish-sort span { display: none; }
+  .fish-filters { grid-column: 1; grid-row: 2; }
+  .fish-filters[data-collapsed] { display: none; }
+  .fish-filter-toggle { display: inline-grid; }
+  .fish-show-results { display: inline-grid; margin-top: 14px; }
+  .fish-section-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fish-facets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fish-facets h2, .fish-facets .fish-option { grid-column: 1 / -1; }
+  .fish-results { grid-column: 1; grid-row: 3; }
+  .fish-product-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .fish-product-list .catalog-card-copy { padding: 7px 8px 9px; }
+  .fish-product-list .catalog-card-photo { padding: 5px; }
+  .fish-subcategories { gap: 4px; }
+  .fish-subcategories a { padding-inline: 7px; font-size: .85rem; }
+}
+@media (max-width: 355px) {
+  .fish-search input { font-size: .92rem; }
+  .fish-card-compare { margin-inline: 6px; padding-inline: 4px; }
+}
+.fish-catalog.has-comparison { padding-bottom: 62px; }
+@media (max-width: 370px) {
+  .fish-catalog.has-comparison { padding-bottom: 82px; }
+}
+.fish-catalog[data-refined] .fish-catalog-intro { padding-block: 18px; }
+.fish-catalog[data-refined] .fish-catalog-heading h1 { font-size: clamp(1.65rem, 3vw, 2.8rem); }
+.fish-catalog[data-refined] .fish-catalog-heading p,
+.fish-catalog[data-refined] .fish-catalog-calc { display: none; }
+.fish-department-links { display: flex; flex-wrap: wrap; gap: 0 15px; margin-top: 4px; }
+.fish-department-links a, .fish-setup-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  color: var(--navy);
+  font-size: .875rem;
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+.fish-department-links a:hover, .fish-setup-link:hover { color: var(--blue); }
+.fish-setup-link { margin-bottom: 6px; }
+.fish-sort select, .fish-facet select {
+  height: 44px;
+  appearance: none;
+  padding-right: 28px;
+  background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='m1 1 5 5 5-5' fill='none' stroke='%23052b72' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 9px center;
+}
+@media (max-width: 760px) {
+  .fish-catalog[data-refined] .fish-catalog-intro { padding-block: 13px; }
+  .fish-department-links { column-gap: 11px; }
+}

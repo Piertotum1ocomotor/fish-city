@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="../sections.css?v=10">
   <link rel="stylesheet" href="../catalog.css?v=13">
   <script src="../app.js?v=13" defer></script>
-  <script src="../shop.js?v=13" defer></script>
-  <script src="../product-nav.js?v=13" defer></script>
+  <link rel="stylesheet" href="../shop-product.css?v=14">
+  <script src="../product-nav.js?v=14" defer></script>
 </head>
 <body class="section-page" data-section="product">
   <a class="skip" href="#main">К содержанию</a>
@@ -34,25 +34,42 @@
   </header>
   <main id="main" class="shop-product">
     <div class="wrap">
-      <a class="shop-product-back" href="../catalog.html?category=biopreparaty" data-back-to-catalog="920">Вернуться в каталог</a>
+      <nav class="shop-product-trail" aria-label="Навигация по каталогу">
+        <a class="shop-product-back" href="../catalog.html?category=biopreparaty" data-back-to-catalog="920"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 7-5 5 5 5m-5-5h14"/></svg>Вернуться в каталог</a>
+      </nav>
       <div class="shop-product-grid">
-        <div class="shop-product-media"><div class="shop-product-image"><img src="../assets/products/7de6dfa19eec1f6dec48.webp" alt="Против водорослей на основе перекиси, 12кг, для пруда до 120000л" decoding="async" fetchpriority="high"></div></div>
-        <div class="shop-product-summary">
-          <p class="shop-product-kicker">Биопрепараты</p>
+        <div class="shop-product-heading">
+          <div class="shop-product-kicker"><a href="../catalog.html?category=biopreparaty">Биопрепараты</a></div>
           <h1 class="shop-product-title">Против водорослей на основе перекиси, 12кг, для пруда до 120000л</h1>
-          <section class="shop-product-section"><h2>Цена и наличие</h2><p>Цена уточняется. Нет в наличии.</p>
-            <p class="shop-product-date">Данные на 23.11.2026.</p>
+        </div>
+        <div class="shop-product-media" data-product-gallery><a class="shop-product-image" data-gallery-open href="../assets/products/7de6dfa19eec1f6dec48.webp" aria-label="Увеличить фото товара">
+          <img src="../assets/products/7de6dfa19eec1f6dec48.webp" alt="Против водорослей на основе перекиси, 12кг, для пруда до 120000л" decoding="async" fetchpriority="high">
+          <span class="shop-product-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="5.7"/><path d="m15 15 4 4m-8.5-11v5m-2.5-2.5h5"/></svg></span>
+        </a><dialog class="shop-gallery-viewer" aria-label="Фотографии товара">
+        <form method="dialog"><button class="shop-gallery-close" aria-label="Закрыть фото" autofocus><span aria-hidden="true">×</span></button></form>
+        <img alt="" decoding="async">
+
+      </dialog></div>
+        <div class="shop-product-summary">
+          <section class="shop-product-section shop-product-offers"><h2>Цена и наличие</h2><p>Цена уточняется. Нет в наличии.</p>
+            <p class="shop-product-date">Данные на <time datetime="2026-11-23">23.11.2026</time>.</p>
           </section>
+          <dl class="shop-product-facts" aria-label="Основные характеристики"><div><dt>Предельный объём</dt><dd>до 120 м³</dd></div></dl>
+          <section class="shop-product-fulfillment" aria-label="Как получить товар">
+          <div><h2>Доставка и самовывоз</h2><p>Самовывоз в Минске, ул. Киевская, 12.</p></div>
+          <div class="shop-product-receiving-links"><a href="../index.html#delivery">Условия доставки</a><a href="../index.html#pickup">График самовывоза</a></div>
+        </section>
         </div>
         <div class="shop-product-details">
-          <section class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>Вес</dt><dd>12 кг</dd></div><div><dt>Для пруда объемом</dt><dd>до 120000 л</dd></div><div><dt>Особенности</dt><dd>на основе перекиси водорода</dd></div><div><dt>Размер емкости</dt><dd>12 кг</dd></div><div><dt>Для прудов макс. объемом воды</dt><dd>до 120000 л</dd></div><div><dt>Концентрация</dt><dd>50 %</dd></div><div><dt>Что делает</dt><dd>дезинфекция воды</dd></div></dl></section>
-          <section class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Средство против водорослей “HYDROGEN PEROXIDE” на основе перекиси водорода, 12кг, для пруда до 120м³
+          <section id="specifications" class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>Вес</dt><dd>12 кг</dd></div><div><dt>Для пруда объемом</dt><dd>до 120000 л</dd></div><div><dt>Особенности</dt><dd>на основе перекиси водорода</dd></div><div><dt>Размер емкости</dt><dd>12 кг</dd></div><div><dt>Для прудов макс. объемом воды</dt><dd>до 120000 л</dd></div><div><dt>Концентрация</dt><dd>50 %</dd></div><div><dt>Что делает</dt><dd>дезинфекция воды</dd></div></dl></section>
+          <section id="description" class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Средство против водорослей “HYDROGEN PEROXIDE” на основе перекиси водорода, 12кг, для пруда до 120м³
 Перекись водорода — бесцветная прозрачная слегка вязкая жидкость со слабым своеобразным запахом, неограниченно растворимая в воде, спирте и эфире.
 Перекись водорода для искусственных водоёмов используется как один из способов дезинфекции воды, и как радикальное средство борьбы с водорослями, когда водоём значительно зарос и необходимо быстро уничтожить буйно расплодившуюся в нём органику.
 Под воздействием ультрафиолета перекись водорода распадается в воде водоёма на кислород и воду – вещества безвредные.
 При использовании перекиси водорода сильно увеличивается окислительно-восстановительный потенциал, что тормозит развитие водорослей, прекращает преобразование относительно неядовитых нитратов (NO₃) в ядовитые нитриты (NO₂). Кислород окисляет содержащуюся в воде органику до углекислого газа (СО₂). Чем больше углекислого газа растворено в воде, тем ниже рН.
 Углерод (С) – самое важное пищевое вещество для растительности, содержащееся в воде в виде углекислого газа (СО₂), угольной кислоты (Н₂СО₃) и гидрокарбоната кальция [Са(НСО₃)₂]. Высшие растения используют более легко усваиваемый углекислый газ, в то время как водоросли выделяют углерод из гидрокарбоната кальция, следовательно, большое количество углекислого газа полезно высшим водным растениям, а избыток Са(НСО₃)₂– водорослям.
-Перед применением необходимо проконсультироваться со специалистом.</p></section><details class="catalog-more"><summary>Дополнительно</summary><p class="shop-product-description">Для борьбы с нежелательными водорослями надо поддерживать в воде высокое содержание углекислого газа и сокращать концентрацию гидрокарбоната кальция.
+Перед применением необходимо проконсультироваться со специалистом.</p></section>
+<details class="catalog-more"><summary>Дополнительно</summary><p class="shop-product-description">Для борьбы с нежелательными водорослями надо поддерживать в воде высокое содержание углекислого газа и сокращать концентрацию гидрокарбоната кальция.
 Подавление роста водорослей – не только вопрос эстетики, оно необходимо также и для здоровья рыб.
 При применении перекиси водорода кислород поднимает мелкий мусор к поверхности и собирает его в маленькие кучки, вся вредная биология убивается и всплывает. С помощью фильтра и скиммера весь мусор легко собирается. Вода становится прозрачной и чистой.
 При правильном использовании перекиси водорода вреда микрофлоре в фильтре и грунте искусственного водоёма и рыбе, населяющей водоём, не наносится. При передозировке перекиси в воде и в фильтре выделится слишком много кислорода, что для бактерий не полезно, но микрофлора быстро восстановится, ведь вредных веществ в воду не поступило.
@@ -60,7 +77,8 @@
 Для борьбы с водорослями в искусственных водоёмах используют перекись водорода достаточно высоких концентраций – 50% (аптечная перекись всего 3%) поскольку такие организмы имеют защитную плёнку, которую надо уничтожить.
 Побочным положительным результатом применения перекиси является то, что в искусственном водоёме перестают размножаться комары. Комары не подлетают к водоёму, так как они откладывают личинки в стоячей, бедной кислородом, воде. Прочих насекомых тоже становится меньше.
 Применять перекись водорода для водоёмов и бассейнов, который используется для плавания людей, следует очень осторожно. И хотя на кожу и слизистые тела перекись оказывает даже благоприятное воздействие, а волосы и краска бассейна цвет не меняют, плавать в водоёме и бассейне стоит начинать через несколько дней после применения перекиси.
-Важное преимущество перекиси водорода состоит так же в отсутствии необходимости промывки оборудования после обработки, поскольку вещество полностью распадается на безвредные составляющие.</p></details><details class="catalog-more"><summary>Техника безопасности и внесение</summary><p class="shop-product-description">Техника безопасности и способ внесения перекиси водорода в искусственный водоём.
+Важное преимущество перекиси водорода состоит так же в отсутствии необходимости промывки оборудования после обработки, поскольку вещество полностью распадается на безвредные составляющие.</p></details>
+<details class="catalog-more"><summary>Техника безопасности и внесение</summary><p class="shop-product-description">Техника безопасности и способ внесения перекиси водорода в искусственный водоём.
 Хранить данное вещество нужно в таре из специальных пластмасс или чистого алюминия.
 При разбавлении перекиси водорода необходимо соблюдать осторожность!
 Так как раствор перекиси водорода высокой концентрации (50%), то для работы с ним нужны резиновые перчатки и защитные очки.

@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="../sections.css?v=10">
   <link rel="stylesheet" href="../catalog.css?v=13">
   <script src="../app.js?v=13" defer></script>
-  <script src="../shop.js?v=13" defer></script>
-  <script src="../product-nav.js?v=13" defer></script>
+  <link rel="stylesheet" href="../shop-product.css?v=14">
+  <script src="../product-nav.js?v=14" defer></script>
 </head>
 <body class="section-page" data-section="product">
   <a class="skip" href="#main">К содержанию</a>
@@ -34,22 +34,39 @@
   </header>
   <main id="main" class="shop-product">
     <div class="wrap">
-      <a class="shop-product-back" href="../catalog.html?category=korm-dlya-prudovoj-ryby" data-back-to-catalog="430">Вернуться в каталог</a>
+      <nav class="shop-product-trail" aria-label="Навигация по каталогу">
+        <a class="shop-product-back" href="../catalog.html?category=korm-dlya-prudovoj-ryby" data-back-to-catalog="430"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 7-5 5 5 5m-5-5h14"/></svg>Вернуться в каталог</a>
+      </nav>
       <div class="shop-product-grid">
-        <div class="shop-product-media"><div class="shop-product-image"><img src="../assets/products/6265d288cf66a41e3cb3.webp" alt="Корм для рыб (осетровый) 47/15 РФ, 3,00 mm" decoding="async" fetchpriority="high"></div></div>
-        <div class="shop-product-summary">
-          <p class="shop-product-kicker">Корм для прудовой рыбы</p>
+        <div class="shop-product-heading">
+          <div class="shop-product-kicker"><a href="../catalog.html?category=korm-dlya-prudovoj-ryby">Корм для прудовой рыбы</a></div>
           <h1 class="shop-product-title">Корм для рыб (осетровый) 47/15 РФ, 3,00 mm</h1>
-          <section class="shop-product-section"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">0,5 кг</span><span class="shop-offer-price">12,5 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li><li><span class="shop-offer-label">1,5 кг</span><span class="shop-offer-price">32 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li><li><span class="shop-offer-label">1 кг (от 5 кг)</span><span class="shop-offer-price">17 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
-            <p class="shop-product-date">Данные на 23.11.2026.</p>
+        </div>
+        <div class="shop-product-media" data-product-gallery><a class="shop-product-image" data-gallery-open href="../assets/products/6265d288cf66a41e3cb3.webp" aria-label="Увеличить фото товара">
+          <img src="../assets/products/6265d288cf66a41e3cb3.webp" alt="Корм для рыб (осетровый) 47/15 РФ, 3,00 mm" decoding="async" fetchpriority="high">
+          <span class="shop-product-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="5.7"/><path d="m15 15 4 4m-8.5-11v5m-2.5-2.5h5"/></svg></span>
+        </a><dialog class="shop-gallery-viewer" aria-label="Фотографии товара">
+        <form method="dialog"><button class="shop-gallery-close" aria-label="Закрыть фото" autofocus><span aria-hidden="true">×</span></button></form>
+        <img alt="" decoding="async">
+
+      </dialog></div>
+        <div class="shop-product-summary">
+          <section class="shop-product-section shop-product-offers"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">0,5 кг</span><span class="shop-offer-price">12,5 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li><li><span class="shop-offer-label">1,5 кг</span><span class="shop-offer-price">32 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li><li><span class="shop-offer-label">1 кг (от 5 кг)</span><span class="shop-offer-price">17 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
+            <p class="shop-product-date">Данные на <time datetime="2026-11-23">23.11.2026</time>.</p>
           </section>
+          <dl class="shop-product-facts" aria-label="Основные характеристики"><div><dt>По плавучести</dt><dd>тонущий</dd></div></dl>
+          <section class="shop-product-fulfillment" aria-label="Как получить товар">
+          <div><h2>Доставка</h2></div>
+          <div class="shop-product-receiving-links"><a href="../index.html#delivery">Условия получения</a></div>
+        </section>
         </div>
         <div class="shop-product-details">
-          <section class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>По плавучести</dt><dd>тонущий</dd></div></dl></section>
-          <section class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Корм для мальков осетровых (стерлядь, ленский осетр), изготовителем которого является АкваКорм.</p>
+          <section id="specifications" class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>По плавучести</dt><dd>тонущий</dd></div></dl></section>
+          <section id="description" class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Корм для мальков осетровых (стерлядь, ленский осетр), изготовителем которого является АкваКорм.</p>
 <p class="shop-product-description">Корм для рыб (осетровый) 47/15 РФ, гранула 3,00 мм предназначен для кормления осетра, стерляди и других осетровых рыб, выращиваемых в прудах, бассейнах и искусственных водоемах. Размер гранулы 3 мм подходит для подрастающей осетровой рыбы, которая уже перешла с мелких стартовых кормов на более крупную фракцию. Гранулы такого размера рыбе удобно захватывать и поедать.
 Осетровый корм 47/15 можно использовать для регулярного кормления в период активного роста рыбы. Количество корма следует подбирать в зависимости от размера и количества осетров, температуры воды и активности питания. Лучше давать корм небольшими порциями и контролировать, насколько быстро рыба его съедает. Если часть гранул остается несъеденной, следующую порцию рекомендуется уменьшить, чтобы корм не накапливался в водоеме и не ухудшал качество воды.
-Осетровый корм с гранулой 3 мм подойдет для частных прудов и рыбоводных хозяйств, где выращивают осетра или стерлядь. При выборе фракции важно ориентироваться прежде всего на размер рыбы: по мере роста осетров рекомендуется постепенно переходить на корм с более крупной гранулой. Правильно подобранный размер корма облегчает кормление и позволяет более точно контролировать его расход.</p></section><details class="catalog-more"><summary>Состав</summary><p class="shop-product-description">Состав: рыбная мука, рыбный жир, соевый белок, пшеница, гемоглобин сухой, БМBK, гороховый протеин премикс, сорбент микотоксинов, антиоксидант, гуминобиотик.</p></details>
+Осетровый корм с гранулой 3 мм подойдет для частных прудов и рыбоводных хозяйств, где выращивают осетра или стерлядь. При выборе фракции важно ориентироваться прежде всего на размер рыбы: по мере роста осетров рекомендуется постепенно переходить на корм с более крупной гранулой. Правильно подобранный размер корма облегчает кормление и позволяет более точно контролировать его расход.</p></section>
+<details class="catalog-more"><summary>Состав</summary><p class="shop-product-description">Состав: рыбная мука, рыбный жир, соевый белок, пшеница, гемоглобин сухой, БМBK, гороховый протеин премикс, сорбент микотоксинов, антиоксидант, гуминобиотик.</p></details>
         </div>
       </div>
     </div>

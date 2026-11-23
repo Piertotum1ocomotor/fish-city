@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="../sections.css?v=10">
   <link rel="stylesheet" href="../catalog.css?v=13">
   <script src="../app.js?v=13" defer></script>
-  <script src="../shop.js?v=13" defer></script>
-  <script src="../product-nav.js?v=13" defer></script>
+  <link rel="stylesheet" href="../shop-product.css?v=14">
+  <script src="../product-nav.js?v=14" defer></script>
 </head>
 <body class="section-page" data-section="product">
   <a class="skip" href="#main">К содержанию</a>
@@ -34,19 +34,35 @@
   </header>
   <main id="main" class="shop-product">
     <div class="wrap">
-      <a class="shop-product-back" href="../catalog.html?category=rasteniya-dlya-pruda" data-back-to-catalog="3677">Вернуться в каталог</a>
+      <nav class="shop-product-trail" aria-label="Навигация по каталогу">
+        <a class="shop-product-back" href="../catalog.html?category=rasteniya-dlya-pruda" data-back-to-catalog="3677"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 7-5 5 5 5m-5-5h14"/></svg>Вернуться в каталог</a>
+      </nav>
       <div class="shop-product-grid">
-        <div class="shop-product-media"><div class="shop-product-image"><img src="../assets/products/cc2fb6aacde1f6960d20.webp" alt="Ирис сибирский (синий)" decoding="async" fetchpriority="high"></div></div>
-        <div class="shop-product-summary">
-          <p class="shop-product-kicker">Растения для пруда</p>
+        <div class="shop-product-heading">
+          <div class="shop-product-kicker"><a href="../catalog.html?category=rasteniya-dlya-pruda">Растения для пруда</a></div>
           <h1 class="shop-product-title">Ирис сибирский (синий)</h1>
-          <section class="shop-product-section"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">P9</span><span class="shop-offer-price">24 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
-            <p class="shop-product-date">Данные на 23.11.2026.</p>
+        </div>
+        <div class="shop-product-media" data-product-gallery><a class="shop-product-image" data-gallery-open href="../assets/products/cc2fb6aacde1f6960d20.webp" aria-label="Увеличить фото товара">
+          <img src="../assets/products/cc2fb6aacde1f6960d20.webp" alt="Ирис сибирский (синий)" decoding="async" fetchpriority="high">
+          <span class="shop-product-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="5.7"/><path d="m15 15 4 4m-8.5-11v5m-2.5-2.5h5"/></svg></span>
+        </a><dialog class="shop-gallery-viewer" aria-label="Фотографии товара">
+        <form method="dialog"><button class="shop-gallery-close" aria-label="Закрыть фото" autofocus><span aria-hidden="true">×</span></button></form>
+        <img alt="" decoding="async">
+
+      </dialog></div>
+        <div class="shop-product-summary">
+          <section class="shop-product-section shop-product-offers"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">P9</span><span class="shop-offer-price">24 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
+            <p class="shop-product-date">Данные на <time datetime="2026-11-23">23.11.2026</time>.</p>
           </section>
+
+          <section class="shop-product-fulfillment" aria-label="Как получить товар">
+          <div><h2>Доставка</h2></div>
+          <div class="shop-product-receiving-links"><a href="../index.html#delivery">Условия получения</a></div>
+        </section>
         </div>
         <div class="shop-product-details">
-          <section class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>Преимущества</dt><dd>Неприхотлив, устойчив к болезням, укрепляет берега</dd></div><div><dt>Время цветения</dt><dd>Май-июль</dd></div><div><dt>Размер листьев</dt><dd>40-80 см</dd></div><div><dt>Длина цветков</dt><dd>7-10 см</dd></div><div><dt>Длина корней</dt><dd>20-50 см</dd></div></dl></section>
-          <section class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Ирис сибирский (Iris sibirica) – это многолетнее травянистое растение, которое идеально подходит для украшения прудов и водоемов.</p>
+          <section id="specifications" class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>Преимущества</dt><dd>Неприхотлив, устойчив к болезням, укрепляет берега</dd></div><div><dt>Время цветения</dt><dd>Май-июль</dd></div><div><dt>Размер листьев</dt><dd>40-80 см</dd></div><div><dt>Длина цветков</dt><dd>7-10 см</dd></div><div><dt>Длина корней</dt><dd>20-50 см</dd></div></dl></section>
+          <section id="description" class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Ирис сибирский (Iris sibirica) – это многолетнее травянистое растение, которое идеально подходит для украшения прудов и водоемов.</p>
 <p class="shop-product-description">Ирис сибирский синий (Iris sibirica) – это многолетнее травянистое растение, которое идеально подходит для украшения прудов и водоемов. Он отличается изящными, узкими листьями и яркими цветами, которые могут быть различных оттенков синего, фиолетового и белого. Ирис сибирский не только придает водоему эстетическую привлекательность, но и обладает рядом преимуществ. Во-первых, это растение неприхотливо в уходе и хорошо адаптируется к различным условиям, включая влажные и заболоченные почвы. Во-вторых, ирис сибирский устойчив к болезням и вредителям, что делает его долговечным и надежным элементом ландшафтного дизайна. В-третьих, его корневая система помогает укреплять берега водоемов, предотвращая эрозию почвы. Кроме того, ирис сибирский привлекает полезных насекомых, таких как пчелы и бабочки, способствуя биоразнообразию в вашем саду. Наконец, это растение обладает высокой декоративной ценностью, создавая яркие акценты и гармонично вписываясь в природные композиции.</p></section>
         </div>
       </div>

@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="../sections.css?v=10">
   <link rel="stylesheet" href="../catalog.css?v=13">
   <script src="../app.js?v=13" defer></script>
-  <script src="../shop.js?v=13" defer></script>
-  <script src="../product-nav.js?v=13" defer></script>
+  <link rel="stylesheet" href="../shop-product.css?v=14">
+  <script src="../product-nav.js?v=14" defer></script>
 </head>
 <body class="section-page" data-section="product">
   <a class="skip" href="#main">К содержанию</a>
@@ -34,19 +34,35 @@
   </header>
   <main id="main" class="shop-product">
     <div class="wrap">
-      <a class="shop-product-back" href="../catalog.html?category=biopreparaty" data-back-to-catalog="934">Вернуться в каталог</a>
+      <nav class="shop-product-trail" aria-label="Навигация по каталогу">
+        <a class="shop-product-back" href="../catalog.html?category=biopreparaty" data-back-to-catalog="934"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 7-5 5 5 5m-5-5h14"/></svg>Вернуться в каталог</a>
+      </nav>
       <div class="shop-product-grid">
-        <div class="shop-product-media"><div class="shop-product-image"><img src="../assets/products/1c9faf4a7ac63ed1eca0.webp" alt="Для снижения донных отложений в пруду AlgotecSPLIT, 5л" decoding="async" fetchpriority="high"></div></div>
-        <div class="shop-product-summary">
-          <p class="shop-product-kicker">Биопрепараты</p>
+        <div class="shop-product-heading">
+          <div class="shop-product-kicker"><a href="../catalog.html?category=biopreparaty">Биопрепараты</a></div>
           <h1 class="shop-product-title">Для снижения донных отложений в пруду AlgotecSPLIT, 5л</h1>
-          <section class="shop-product-section"><h2>Цена и наличие</h2><p>Цена уточняется. Нет в наличии.</p>
-            <p class="shop-product-date">Данные на 23.11.2026.</p>
+        </div>
+        <div class="shop-product-media" data-product-gallery><a class="shop-product-image" data-gallery-open href="../assets/products/1c9faf4a7ac63ed1eca0.webp" aria-label="Увеличить фото товара">
+          <img src="../assets/products/1c9faf4a7ac63ed1eca0.webp" alt="Для снижения донных отложений в пруду AlgotecSPLIT, 5л" decoding="async" fetchpriority="high">
+          <span class="shop-product-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="5.7"/><path d="m15 15 4 4m-8.5-11v5m-2.5-2.5h5"/></svg></span>
+        </a><dialog class="shop-gallery-viewer" aria-label="Фотографии товара">
+        <form method="dialog"><button class="shop-gallery-close" aria-label="Закрыть фото" autofocus><span aria-hidden="true">×</span></button></form>
+        <img alt="" decoding="async">
+
+      </dialog></div>
+        <div class="shop-product-summary">
+          <section class="shop-product-section shop-product-offers"><h2>Цена и наличие</h2><p>Цена уточняется. Нет в наличии.</p>
+            <p class="shop-product-date">Данные на <time datetime="2026-11-23">23.11.2026</time>.</p>
           </section>
+
+          <section class="shop-product-fulfillment" aria-label="Как получить товар">
+          <div><h2>Доставка и самовывоз</h2><p>Самовывоз в Минске, ул. Киевская, 12.</p></div>
+          <div class="shop-product-receiving-links"><a href="../index.html#delivery">Условия доставки</a><a href="../index.html#pickup">График самовывоза</a></div>
+        </section>
         </div>
         <div class="shop-product-details">
-          <section class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>Объем</dt><dd>5 л</dd></div><div><dt>Вид</dt><dd>жидкость</dd></div><div><dt>Цвет</dt><dd>от соломенного до светло коричневого</dd></div><div><dt>Качественные аоказатели</dt><dd>рН – 5,5 – 7,5 КОЕ 1*107</dd></div><div><dt>Что делает</dt><dd>для снижения количества донных отложений в пруду</dd></div></dl></section>
-          <section class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Альготек Сплит – биопрепарат для снижения количества донных отложений в пруду, 5л
+          <section id="specifications" class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>Объем</dt><dd>5 л</dd></div><div><dt>Вид</dt><dd>жидкость</dd></div><div><dt>Цвет</dt><dd>от соломенного до светло коричневого</dd></div><div><dt>Качественные аоказатели</dt><dd>рН – 5,5 – 7,5 КОЕ 1*107</dd></div><div><dt>Что делает</dt><dd>для снижения количества донных отложений в пруду</dd></div></dl></section>
+          <section id="description" class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Альготек Сплит – биопрепарат для снижения количества донных отложений в пруду, 5л
 Биопрепарат Algotec SPLIT предназначен для очистки пресных водоемов от растворенных в воде органических соединений и переработки избыточных донных отложений. Очистка достигается в результате полной биологической деструкции сложных органических соединений и ядовитых веществ до элементарных – воды, углекислого газа, минеральных солей и атомарного азота. Биопрепарат выпускается в форме готовой к использованию суспензии. Микроорганизмы, входящие в состав подобраны таким образом, чтобы обеспечить полный процесс биодеструкции органики, с учетом необходимости протекания всех биохимических превращений.
 Область применения:
 • рыбхозы;
@@ -55,8 +71,10 @@
 • водохранилища;
 • озера;
 • реки.
-Перед применением необходимо проконсультироваться со специалистом.</p></section><details class="catalog-more"><summary>Назначение</summary><p class="shop-product-description">Назначение биопрепарата Algotec SPLIT:
-Восстановление природных механизмов самоочищения и активация процессов биоремедиации пресных водоемов. В результате действия биопрепарата происходит полное восстановление биоценоза. Прекращается выделение опасных, в том числе дурно пахнущих соединений, сокращается объем иловых отложений (до 25 см за сезон), происходит вытеснение патогенной и гнилостной микрофлоры, происходит очистка воды от органических загрязнителей и вредных растворенных газов.</p></details><details class="catalog-more"><summary>Состав и эффективность средства</summary><p class="shop-product-description">При регулярном использовании Algotec SPLIT происходит:
+Перед применением необходимо проконсультироваться со специалистом.</p></section>
+<details class="catalog-more"><summary>Назначение</summary><p class="shop-product-description">Назначение биопрепарата Algotec SPLIT:
+Восстановление природных механизмов самоочищения и активация процессов биоремедиации пресных водоемов. В результате действия биопрепарата происходит полное восстановление биоценоза. Прекращается выделение опасных, в том числе дурно пахнущих соединений, сокращается объем иловых отложений (до 25 см за сезон), происходит вытеснение патогенной и гнилостной микрофлоры, происходит очистка воды от органических загрязнителей и вредных растворенных газов.</p></details>
+<details class="catalog-more"><summary>Состав и эффективность средства</summary><p class="shop-product-description">При регулярном использовании Algotec SPLIT происходит:
 • очистка воды от вредных соединений;
 • ускоренная переработка донных отложений;
 • вытеснение сине-зеленых водорослей и предотвращение заболачивания;
@@ -68,18 +86,21 @@
 • устранение неприятного запаха от мяса рыбы;
 • восстановление биоценоза.
 Состав:
-Algotec SPLIT – суспензионный биопрепарат нового поколения на основе комплекса сапрофитных микроорганизмов. Входящие в состав микроорганизмы абсолютно безопасны и являются нормофлорой пресных водоемов.</p></details><details class="catalog-more"><summary>Качественные показатели</summary><p class="shop-product-description">Качественные показатели:
+Algotec SPLIT – суспензионный биопрепарат нового поколения на основе комплекса сапрофитных микроорганизмов. Входящие в состав микроорганизмы абсолютно безопасны и являются нормофлорой пресных водоемов.</p></details>
+<details class="catalog-more"><summary>Качественные показатели</summary><p class="shop-product-description">Качественные показатели:
 Внешний вид – однородная жидкость
 Цвет – от соломенного до светло коричневого
 Запах – кефирно-силосный
 рН – 5,5 – 7,5
-КОЕ 1*107</p></details><details class="catalog-more"><summary>Норма расхода и кратность внесения</summary><p class="shop-product-description">Норморасход препарата:
+КОЕ 1*107</p></details>
+<details class="catalog-more"><summary>Норма расхода и кратность внесения</summary><p class="shop-product-description">Норморасход препарата:
 Средний норморасход препарата Algotec SPLIT составляет 5-10 л на 1 Га. Более точный расчет расхода препарата делается применительно к конкретному объекту, исходя из проточности, состояния водоема и фазы внесения.
 Кратность внесения – 1-3 раза за сезон:
 • Первое внесение производится ранней весной (март/апрель), при температуре воды 10- 12 °С;
 • Второе внесение производится в начале лета (июнь/июль), при температуре воды 15-20 °С;
 • Третье внесение производится в октябре/ноябре;
-Первые два внесения являются обязательными и необходимы для эффективной работы биопрепарата. Третье внесение необходимо для анаэробной работы микроорганизмов в зимний период и наиболее востребовано в рыборазводных хозяйства и водоемах с большим количеством избыточных донных отложений.</p></details><details class="catalog-more"><summary>Применение и хранение</summary><p class="shop-product-description">Применение:
+Первые два внесения являются обязательными и необходимы для эффективной работы биопрепарата. Третье внесение необходимо для анаэробной работы микроорганизмов в зимний период и наиболее востребовано в рыборазводных хозяйства и водоемах с большим количеством избыточных донных отложений.</p></details>
+<details class="catalog-more"><summary>Применение и хранение</summary><p class="shop-product-description">Применение:
 Биопрепарат вносится путем распыления по зеркалу водоема. Для удобства использования, допускается предварительное разбавление препарата в не хлорированной водопроводной воде, или воде из водоема, что удобно для равномерного его распределения по поверхности водоема.
 Для максимального эффекта, рекомендовано совместное использование с биопрепаратом Algotec АКВА.
 Важно – перед каждым применением, содержимое канистры тщательно перемешать для получения однородного состава.

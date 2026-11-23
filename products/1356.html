@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="../sections.css?v=10">
   <link rel="stylesheet" href="../catalog.css?v=13">
   <script src="../app.js?v=13" defer></script>
-  <script src="../shop.js?v=13" defer></script>
-  <script src="../product-nav.js?v=13" defer></script>
+  <link rel="stylesheet" href="../shop-product.css?v=14">
+  <script src="../product-nav.js?v=14" defer></script>
 </head>
 <body class="section-page" data-section="product">
   <a class="skip" href="#main">К содержанию</a>
@@ -34,24 +34,41 @@
   </header>
   <main id="main" class="shop-product">
     <div class="wrap">
-      <a class="shop-product-back" href="../catalog.html?category=aeratory-dlya-pruda" data-back-to-catalog="1356">Вернуться в каталог</a>
+      <nav class="shop-product-trail" aria-label="Навигация по каталогу">
+        <a class="shop-product-back" href="../catalog.html?category=aeratory-dlya-pruda" data-back-to-catalog="1356"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 7-5 5 5 5m-5-5h14"/></svg>Вернуться в каталог</a>
+      </nav>
       <div class="shop-product-grid">
-        <div class="shop-product-media"><div class="shop-product-image"><img src="../assets/products/d05e7b075956c5920c0b.webp" alt="Компрессор мембранный HIBLOW HP-40, 40-42 л/мин, 38 Вт, 0.128 Бар" decoding="async" fetchpriority="high"></div></div>
+        <div class="shop-product-heading">
+          <div class="shop-product-kicker"><a href="../catalog.html?category=aeratory-dlya-pruda">Аэраторы для пруда</a></div>
+          <h1 class="shop-product-title">Компрессор мембранный HIBLOW <span class="shop-product-code">HP-40</span>, 40-42 л/мин, 38 Вт, 0.128 Бар</h1>
+        </div>
+        <div class="shop-product-media" data-product-gallery><a class="shop-product-image" data-gallery-open href="../assets/products/d05e7b075956c5920c0b.webp" aria-label="Увеличить фото товара">
+          <img src="../assets/products/d05e7b075956c5920c0b.webp" alt="Компрессор мембранный HIBLOW HP-40, 40-42 л/мин, 38 Вт, 0.128 Бар" decoding="async" fetchpriority="high">
+          <span class="shop-product-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="5.7"/><path d="m15 15 4 4m-8.5-11v5m-2.5-2.5h5"/></svg></span>
+        </a><dialog class="shop-gallery-viewer" aria-label="Фотографии товара">
+        <form method="dialog"><button class="shop-gallery-close" aria-label="Закрыть фото" autofocus><span aria-hidden="true">×</span></button></form>
+        <img alt="" decoding="async">
+
+      </dialog></div>
         <div class="shop-product-summary">
-          <p class="shop-product-kicker">Аэраторы для пруда</p>
-          <h1 class="shop-product-title">Компрессор мембранный HIBLOW HP-40, 40-42 л/мин, 38 Вт, 0.128 Бар</h1>
-          <section class="shop-product-section"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">1 шт.</span><span class="shop-offer-price">866,5 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
-            <p class="shop-product-date">Данные на 23.11.2026.</p>
+          <section class="shop-product-section shop-product-offers"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">1 шт.</span><span class="shop-offer-price">866,5 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
+            <p class="shop-product-date">Данные на <time datetime="2026-11-23">23.11.2026</time>.</p>
           </section>
+          <dl class="shop-product-facts" aria-label="Основные характеристики"><div><dt>Бренд</dt><dd>Hiblow</dd></div></dl>
+          <section class="shop-product-fulfillment" aria-label="Как получить товар">
+          <div><h2>Доставка и самовывоз</h2><p>Самовывоз в Минске, ул. Киевская, 12.</p></div>
+          <div class="shop-product-receiving-links"><a href="../index.html#delivery">Условия доставки</a><a href="../index.html#pickup">График самовывоза</a></div>
+        </section>
         </div>
         <div class="shop-product-details">
-          <section class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>Бренд</dt><dd>Hiblow</dd></div><div><dt>Тип аэратора</dt><dd>мембранный</dd></div><div><dt>Потребляемая мощность, Вт</dt><dd>38</dd></div><div><dt>Производительность, л/мин</dt><dd>40-42</dd></div><div><dt>Рабочее давление, МРа</dt><dd>0.128</dd></div><div><dt>Вес, кг</dt><dd>5.7</dd></div><div><dt>Напряжение, В</dt><dd>220</dd></div><div><dt>Страна производитель</dt><dd>Япония</dd></div><div><dt>Уровень шума</dt><dd>32 децибел</dd></div></dl></section>
-          <section class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Мини-компрессор (воздуходувка) – это устройство, которое подает воздух в емкость, с целью аэрации.</p>
+          <section id="specifications" class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>Бренд</dt><dd>Hiblow</dd></div><div><dt>Тип аэратора</dt><dd>мембранный</dd></div><div><dt>Потребляемая мощность, Вт</dt><dd>38</dd></div><div><dt>Производительность, л/мин</dt><dd>40-42</dd></div><div><dt>Рабочее давление, МРа</dt><dd>0.128</dd></div><div><dt>Вес, кг</dt><dd>5.7</dd></div><div><dt>Напряжение, В</dt><dd>220</dd></div><div><dt>Страна производитель</dt><dd>Япония</dd></div><div><dt>Уровень шума</dt><dd>32 децибел</dd></div></dl></section>
+          <section id="description" class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Мини-компрессор (воздуходувка) – это устройство, которое подает воздух в емкость, с целью аэрации.</p>
 <p class="shop-product-description">АЭРАТОР ДЛЯ ПРУДА HIBLOW HP-40
 Условия, установка и работа компрессора Hiblow HP-40:
 Мини-компрессор (воздуходувка) – это устройство, которое подает воздух в емкость, с целью аэрации. За десятки лет, производители компрессоров Hiblow, зарекомендовали себя как самый надежный диафрагмальный компрессор на рынке. Компрессор Hiblow HP-40 занимает лидирующие места по производительности среди конкурентов. А также лучший показатель по энергоэффективности, за исключением Hiblow XP-40.
 Компрессорное оборудование Hiblow HP-40 очень не нуждается в постоянном сервисном обслуживании и особом уходе. Устанавливается в некоторых небольших очистных сооружениях. Данный вид компессоров широко распространен на нашем рынке. В основном комплектуется в таких очистных сооружениях как: Тверь 0,5П ; Тверь 0,5ПН ; Тверь 0,75П ; Тверь 0,75ПН ; Тверь 0,85П ; Тверь 0,85ПН ; Тверь 1П ; Тверь 1ПН. Также в в самых небольших станциях глубокой типа экогранд, топас и тд. Конкретно в станциях Эко-Гранд 3 и Топас 3 а также различных модификациях подобного рода станций в компаниях конкурентах.
-Данные компрессора имеют существенные отличия от Hiblow HP-20 в первую очередь по габаритам, но система защиты и система предохранителей идентичны. Данные компрессора стоят в случае исполнения под септик Тверь в доме с проложенной магистралью. В случае Топазообразных септиков компрессора находятся в корпусе септика, в специальном компрессорном отсеке. Если вы планируете делать самодельный септик или же планируете аэрировать ваш пруд или иной водоем, то вам потребуется защита для компрессора. Под защитой я подразумеваю специальный короб для компрессора. Его можно сделать из повседневных материалов, каких как доски, либо любого рода производные типа ДСП. Данный короб защитит его от попадания прямых солнечных лучей и природных осадков.</p></section><details class="catalog-more"><summary>ДОПОЛНИТЕЛЬНО</summary><p class="shop-product-description">Высокая энергоэффективность
+Данные компрессора имеют существенные отличия от Hiblow HP-20 в первую очередь по габаритам, но система защиты и система предохранителей идентичны. Данные компрессора стоят в случае исполнения под септик Тверь в доме с проложенной магистралью. В случае Топазообразных септиков компрессора находятся в корпусе септика, в специальном компрессорном отсеке. Если вы планируете делать самодельный септик или же планируете аэрировать ваш пруд или иной водоем, то вам потребуется защита для компрессора. Под защитой я подразумеваю специальный короб для компрессора. Его можно сделать из повседневных материалов, каких как доски, либо любого рода производные типа ДСП. Данный короб защитит его от попадания прямых солнечных лучей и природных осадков.</p></section>
+<details class="catalog-more"><summary>ДОПОЛНИТЕЛЬНО</summary><p class="shop-product-description">Высокая энергоэффективность
 Низкий уровень шума
 Отсутствие вибраций
 Простота в обслуживании

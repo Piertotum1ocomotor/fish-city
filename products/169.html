@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="../sections.css?v=10">
   <link rel="stylesheet" href="../catalog.css?v=13">
   <script src="../app.js?v=13" defer></script>
-  <script src="../shop.js?v=13" defer></script>
-  <script src="../product-nav.js?v=13" defer></script>
+  <link rel="stylesheet" href="../shop-product.css?v=14">
+  <script src="../product-nav.js?v=14" defer></script>
 </head>
 <body class="section-page" data-section="product">
   <a class="skip" href="#main">К содержанию</a>
@@ -34,22 +34,39 @@
   </header>
   <main id="main" class="shop-product">
     <div class="wrap">
-      <a class="shop-product-back" href="../catalog.html?category=korm-dlya-prudovoj-ryby" data-back-to-catalog="169">Вернуться в каталог</a>
+      <nav class="shop-product-trail" aria-label="Навигация по каталогу">
+        <a class="shop-product-back" href="../catalog.html?category=korm-dlya-prudovoj-ryby" data-back-to-catalog="169"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 7-5 5 5 5m-5-5h14"/></svg>Вернуться в каталог</a>
+      </nav>
       <div class="shop-product-grid">
-        <div class="shop-product-media"><div class="shop-product-image"><img src="../assets/products/50d9b4c4911415a476f7.webp" alt="Корм для рыб COPPENS (SUPREME-15 3,00 mm)" decoding="async" fetchpriority="high"></div></div>
+        <div class="shop-product-heading">
+          <div class="shop-product-kicker"><a href="../catalog.html?category=korm-dlya-prudovoj-ryby">Корм для прудовой рыбы</a></div>
+          <h1 class="shop-product-title">Корм для рыб COPPENS (<span class="shop-product-code">SUPREME-15</span> 3,00 mm)</h1>
+        </div>
+        <div class="shop-product-media" data-product-gallery><a class="shop-product-image" data-gallery-open href="../assets/products/50d9b4c4911415a476f7.webp" aria-label="Увеличить фото товара">
+          <img src="../assets/products/50d9b4c4911415a476f7.webp" alt="Корм для рыб COPPENS (SUPREME-15 3,00 mm)" decoding="async" fetchpriority="high">
+          <span class="shop-product-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="5.7"/><path d="m15 15 4 4m-8.5-11v5m-2.5-2.5h5"/></svg></span>
+        </a><dialog class="shop-gallery-viewer" aria-label="Фотографии товара">
+        <form method="dialog"><button class="shop-gallery-close" aria-label="Закрыть фото" autofocus><span aria-hidden="true">×</span></button></form>
+        <img alt="" decoding="async">
+
+      </dialog></div>
         <div class="shop-product-summary">
-          <p class="shop-product-kicker">Корм для прудовой рыбы</p>
-          <h1 class="shop-product-title">Корм для рыб COPPENS (SUPREME-15 3,00 mm)</h1>
-          <section class="shop-product-section"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">0,5 кг</span><span class="shop-offer-price">13,5 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li><li><span class="shop-offer-label">1,5 кг</span><span class="shop-offer-price">35 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li><li><span class="shop-offer-label">1 кг (от 5кг)</span><span class="shop-offer-price">20 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
-            <p class="shop-product-date">Данные на 23.11.2026.</p>
+          <section class="shop-product-section shop-product-offers"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">0,5 кг</span><span class="shop-offer-price">13,5 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li><li><span class="shop-offer-label">1,5 кг</span><span class="shop-offer-price">35 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li><li><span class="shop-offer-label">1 кг (от 5кг)</span><span class="shop-offer-price">20 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
+            <p class="shop-product-date">Данные на <time datetime="2026-11-23">23.11.2026</time>.</p>
           </section>
+          <dl class="shop-product-facts" aria-label="Основные характеристики"><div><dt>По плавучести</dt><dd>тонущий</dd></div></dl>
+          <section class="shop-product-fulfillment" aria-label="Как получить товар">
+          <div><h2>Доставка</h2></div>
+          <div class="shop-product-receiving-links"><a href="../index.html#delivery">Условия получения</a></div>
+        </section>
         </div>
         <div class="shop-product-details">
-          <section class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>По плавучести</dt><dd>тонущий</dd></div></dl></section>
-          <section class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Корм для рыб COPPENS (SUPREME-15 3,00 mm) - это продукционный корм средней энергетичности.</p>
+          <section id="specifications" class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>По плавучести</dt><dd>тонущий</dd></div></dl></section>
+          <section id="description" class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Корм для рыб COPPENS (SUPREME-15 3,00 mm) - это продукционный корм средней энергетичности.</p>
 <p class="shop-product-description">Корм для осетровых рыб COPPENS SUPREME-15, гранула 3,00 мм предназначен для кормления подрастающего осетра, стерляди и других видов осетровых рыб. Размер гранулы 3 мм подходит для небольшой и средней по размеру рыбы, которая уже перешла с самых мелких стартовых кормов, но еще не нуждается в крупной фракции. Корм можно использовать при выращивании осетровых в прудах, бассейнах, УЗВ и других искусственных водоемах.
 COPPENS SUPREME-15 подходит для регулярного кормления осетровых в период активного роста и питания. Размер порции следует подбирать с учетом массы и количества рыбы, температуры воды и ее аппетита. Корм лучше давать небольшими порциями, контролируя, насколько быстро осетры его съедают. Если часть гранул остается несъеденной, количество корма стоит уменьшить — это помогает сократить лишний расход и не допускать накопления остатков в воде.
-Осетровый корм COPPENS SUPREME-15 с гранулой 3 мм подойдет как для частного содержания осетровых, так и для рыбоводных хозяйств. При выборе фракции важно ориентироваться на размер рыбы: для совсем небольшой молоди потребуется более мелкий корм, а по мере роста осетра можно постепенно переходить на гранулы 4,5 мм, 6 мм и более. Правильно подобранная фракция облегчает поедание корма и позволяет точнее контролировать ежедневное кормление осетровых рыб.</p></section><details class="catalog-more"><summary>Состав</summary><p class="shop-product-description">Состав: содержит 46% сырого протеина и 15% жира для активного роста мышечной массы. В состав также входят необходимые витамины, минералы, клетчатка (1,8%) и зола.</p></details>
+Осетровый корм COPPENS SUPREME-15 с гранулой 3 мм подойдет как для частного содержания осетровых, так и для рыбоводных хозяйств. При выборе фракции важно ориентироваться на размер рыбы: для совсем небольшой молоди потребуется более мелкий корм, а по мере роста осетра можно постепенно переходить на гранулы 4,5 мм, 6 мм и более. Правильно подобранная фракция облегчает поедание корма и позволяет точнее контролировать ежедневное кормление осетровых рыб.</p></section>
+<details class="catalog-more"><summary>Состав</summary><p class="shop-product-description">Состав: содержит 46% сырого протеина и 15% жира для активного роста мышечной массы. В состав также входят необходимые витамины, минералы, клетчатка (1,8%) и зола.</p></details>
         </div>
       </div>
     </div>

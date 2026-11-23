@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="sections.css?v=10">
   <link rel="stylesheet" href="catalog.css?v=13">
   <script src="app.js?v=13" defer></script>
-  <script src="shop.js?v=13" defer></script>
+  <link rel="stylesheet" href="shop-catalog.css?v=14">
+  <script src="shop.js?v=14" defer></script>
 </head>
 <body class="section-page" data-section="catalog">
   <a class="skip" href="#main">К содержанию</a>
@@ -31,43 +32,135 @@
       <a class="header-contact" href="#contact">Контакты</a>
     </div>
   </header>
-  <main id="main">
-    <section class="section-intro catalog-intro">
-      <div class="wrap">
-        <nav class="section-crumbs" aria-label="Путь к разделу"><a href="index.html">Главная</a><span aria-hidden="true">/</span><span aria-current="page">Каталог</span></nav>
-        <div class="catalog-intro-copy"><h1>Каталог Fish City</h1><p>Демонстрационная версия</p><p data-catalog-date hidden></p></div>
-      </div>
-    </section>
-    <section class="wrap section-product-area shop" aria-labelledby="catalog-list-title">
-      <form class="catalog-filter shop-filter" id="shop-filter" action="catalog.html" hidden>
-        <label class="catalog-search-field">Товар, вид рыбы или модель
-          <input type="search" name="q" placeholder="Например, карп или CUV-J40" maxlength="100">
-        </label>
-        <label>Раздел
-          <select name="category"><option value="">Все разделы</option></select>
-        </label>
-        <label data-subcategory hidden>Категория
-          <select name="topic"><option value="">Все категории</option></select>
-        </label>
-        <button type="button" class="catalog-filter-reset" data-reset hidden>Сбросить</button>
-        <div class="catalog-volume-filter" data-pond-parameters hidden>
-          <label><input type="checkbox" name="sizeOnly"> Подходит для объёма <strong data-pond-volume></strong></label>
-          <p>Фильтр показывает модели с указанным допустимым объёмом. Для аэратора проверьте глубину в месте установки распылителя.</p>
+  <main id="main" class="fish-catalog">
+    <form id="shop-filter" action="catalog.html">
+      <section class="fish-catalog-intro" aria-labelledby="catalog-title">
+        <div class="wrap fish-catalog-intro-inner">
+          <div class="fish-catalog-heading">
+            <h1 id="catalog-title">Каталог Fish City</h1>
+            <p>Рыба и товары для пруда, раки и морепродукты.</p>
+          </div>
+          <a class="fish-catalog-calc" href="index.html#pond-calculator">Рассчитать объём пруда <span aria-hidden="true">↗</span></a>
+          <div class="fish-search" data-search hidden>
+            <label for="shop-query">Поиск по каталогу</label>
+            <span class="fish-search-icon" aria-hidden="true"></span>
+            <input id="shop-query" type="search" name="q" placeholder="Например, карп или CUV-J40" maxlength="100" autocomplete="off">
+            <button type="button" data-clear-query hidden aria-label="Очистить поиск">×</button>
+          </div>
         </div>
-      </form>
-      <div class="catalog-list-head shop-results-head">
-        <h2 id="catalog-list-title">Все товары</h2>
-        <p class="catalog-filter-status" role="status" data-status></p>
+      </section>
+      <nav class="wrap fish-departments" data-departments hidden aria-label="Разделы каталога">
+        <a href="catalog.html?category=ryba-dlya-pruda">
+          <img src="assets/pond.webp" alt="" decoding="async" loading="lazy">
+          <span>Рыба для пруда</span>
+        </a>
+        <a href="catalog.html?category=oborudovanie-dlya-pruda">
+          <img src="assets/equipment.webp" alt="" decoding="async" loading="lazy">
+          <span>Оборудование</span>
+        </a>
+        <a href="catalog.html?category=dekorativnaya-ryba-dlya-pruda">
+          <img src="assets/koi.webp" alt="" decoding="async" loading="lazy">
+          <span>Кои и декоративная рыба</span>
+        </a>
+        <a href="catalog.html?category=rasteniya-dlya-pruda">
+          <img src="assets/plants.webp" alt="" decoding="async" loading="lazy">
+          <span>Водные растения</span>
+        </a>
+        <a href="catalog.html?category=zhivye-i-varenye-raki">
+          <img src="assets/catalog-crayfish-raki-l-fish-siti.webp" alt="" decoding="async" loading="lazy">
+          <span>Живые и варёные раки</span>
+        </a>
+        <a href="catalog.html?category=ryba-i-moreprodukty">
+          <img src="assets/seafood.webp" alt="" decoding="async" loading="lazy">
+          <span>Рыба и морепродукты</span>
+        </a>
+      </nav>
+      <nav class="wrap fish-department-links" data-extras aria-label="Другие разделы" hidden></nav>
+      <section class="wrap fish-shop shop" id="catalog-results" aria-labelledby="catalog-list-title">
+        <div class="fish-shop-controls" data-controls hidden>
+          <button type="button" class="fish-button fish-filter-toggle" data-filters-toggle aria-controls="fish-filters" aria-expanded="false">Фильтры</button>
+          <label class="fish-sort">
+            <span>Сортировка</span>
+            <select name="sort" aria-label="Сортировка товаров">
+              <option value="">По умолчанию</option>
+              <option value="name">По названию</option>
+              <option value="available">Сначала в наличии</option>
+              <option value="price-asc" hidden disabled>Сначала дешевле</option>
+              <option value="price-desc" hidden disabled>Сначала дороже</option>
+            </select>
+          </label>
+        </div>
+        <aside class="fish-filters" id="fish-filters" aria-label="Разделы и фильтры" data-filters data-collapsed hidden>
+          <nav aria-label="Разделы каталога">
+            <h2>Разделы</h2>
+            <div class="fish-section-list" data-root-categories></div>
+          </nav>
+          <div class="fish-facets">
+            <h2>Фильтры</h2>
+            <label class="fish-option"><input type="checkbox" name="stock"> Только в наличии</label>
+            <label class="fish-facet" data-brand-filter hidden>Бренд
+              <select name="brand"><option value="">Все бренды</option></select>
+            </label>
+            <label class="fish-facet" data-unit-filter hidden>Единица продажи
+              <select name="unit"><option value="">Все единицы</option></select>
+            </label>
+          </div>
+          <button type="button" class="fish-button fish-show-results" data-show-results>Показать товары</button>
+        </aside>
+        <div class="fish-results">
+          <div class="fish-results-head">
+            <div>
+              <nav class="fish-crumbs" data-category-path aria-label="Текущий раздел" hidden></nav>
+              <h2 id="catalog-list-title" tabindex="-1">Все товары</h2>
+            </div>
+            <p class="fish-result-count" role="status" data-status></p>
+          </div>
+          <nav class="fish-subcategories" data-subcategories aria-label="Подкатегории" hidden></nav>
+          <a class="fish-setup-link" href="index.html#pond-calculator" data-setup-link hidden>Подобрать по объёму пруда <span aria-hidden="true">↗</span></a>
+          <div class="fish-volume" data-pond-parameters hidden>
+            <div>
+              <label class="fish-option"><input type="checkbox" name="sizeOnly"> Подбор для пруда <strong data-pond-volume></strong></label>
+              <p>Предварительный подбор по указанным характеристикам.</p>
+            </div>
+            <a href="index.html#pond-calculator">Изменить объём</a>
+          </div>
+          <div class="fish-active-filters" data-active-filters hidden>
+            <div data-filter-chips></div>
+            <button type="button" data-reset>Сбросить</button>
+          </div>
+          <noscript><p class="fish-empty"><a href="catalog-index.html">Смотреть список всех товаров</a></p></noscript>
+          <div class="fish-empty" data-empty hidden>
+            <h3>Товары не найдены</h3>
+            <p>Попробуйте изменить запрос или снять фильтры.</p>
+            <button type="button" class="fish-button" data-empty-reset>Сбросить фильтры</button>
+          </div>
+          <p class="fish-empty" data-error hidden>Каталог не загрузился. <a href="catalog-index.html">Смотреть список всех товаров</a>.</p>
+          <div class="catalog-cards fish-product-list" id="shop-results"></div>
+          <div class="shop-more" data-more hidden>
+            <button class="fish-button" type="button">Показать ещё</button>
+            <p data-progress></p>
+          </div>
+          <p class="fish-catalog-date" data-catalog-date>Демонстрационная версия</p>
+        </div>
+      </section>
+    </form>
+    <div class="fish-compare-bar" data-compare-bar hidden>
+      <div class="wrap">
+        <p role="status" data-compare-status></p>
+        <div class="fish-compare-actions">
+          <button type="button" data-compare-clear>Очистить</button>
+          <button type="button" data-compare-open disabled>Сравнить</button>
+        </div>
       </div>
-      <noscript><p>Для поиска и фильтров нужен JavaScript. <a href="catalog-index.html">Смотреть список всех товаров</a>.</p></noscript>
-      <p class="catalog-filter-empty" data-empty hidden>Товары не найдены. Измените запрос или выберите другой раздел.</p>
-      <p class="catalog-filter-empty" data-error hidden>Каталог не загрузился. <a href="catalog-index.html">Смотреть список всех товаров</a>.</p>
-      <div class="catalog-cards" id="shop-results"></div>
-      <div class="shop-more" data-more hidden>
-        <button class="button button-blue" type="button">Показать ещё</button>
-        <p data-progress></p>
+    </div>
+    <dialog class="fish-compare-dialog" aria-labelledby="fish-compare-title" data-compare-dialog>
+      <div class="fish-compare-heading">
+        <h2 id="fish-compare-title">Сравнение оборудования</h2>
+        <form method="dialog"><button type="submit" class="fish-button">Закрыть</button></form>
       </div>
-    </section>
+      <p>Характеристики из карточек. Пустые поля обозначены прочерком.</p>
+      <div class="fish-compare-scroll" tabindex="0" data-compare-content></div>
+    </dialog>
   </main>
   <footer id="contact" class="site-footer">
     <div class="wrap">

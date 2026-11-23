@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="../sections.css?v=10">
   <link rel="stylesheet" href="../catalog.css?v=13">
   <script src="../app.js?v=13" defer></script>
-  <script src="../shop.js?v=13" defer></script>
-  <script src="../product-nav.js?v=13" defer></script>
+  <link rel="stylesheet" href="../shop-product.css?v=14">
+  <script src="../product-nav.js?v=14" defer></script>
 </head>
 <body class="section-page" data-section="product">
   <a class="skip" href="#main">К содержанию</a>
@@ -34,19 +34,35 @@
   </header>
   <main id="main" class="shop-product">
     <div class="wrap">
-      <a class="shop-product-back" href="../catalog.html?category=nasosy-dlya-pruda" data-back-to-catalog="1805">Вернуться в каталог</a>
+      <nav class="shop-product-trail" aria-label="Навигация по каталогу">
+        <a class="shop-product-back" href="../catalog.html?category=nasosy-dlya-pruda" data-back-to-catalog="1805"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 7-5 5 5 5m-5-5h14"/></svg>Вернуться в каталог</a>
+      </nav>
       <div class="shop-product-grid">
-        <div class="shop-product-media"><div class="shop-product-image"><img src="../assets/products/5ada54328f28e6bd80fb.webp" alt="Насос фонтанный QP-45 м³/ч, 45000 л/час, 3000 Вт, макс.напор 16м" decoding="async" fetchpriority="high"></div></div>
+        <div class="shop-product-heading">
+          <div class="shop-product-kicker"><a href="../catalog.html?category=nasosy-dlya-pruda">Насосы для пруда</a></div>
+          <h1 class="shop-product-title">Насос фонтанный <span class="shop-product-code">QP-45</span> м³/ч, 45000 л/час, 3000 Вт, макс.напор 16м</h1>
+        </div>
+        <div class="shop-product-media" data-product-gallery><a class="shop-product-image" data-gallery-open href="../assets/products/5ada54328f28e6bd80fb.webp" aria-label="Увеличить фото товара">
+          <img src="../assets/products/5ada54328f28e6bd80fb.webp" alt="Насос фонтанный QP-45 м³/ч, 45000 л/час, 3000 Вт, макс.напор 16м" decoding="async" fetchpriority="high">
+          <span class="shop-product-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="5.7"/><path d="m15 15 4 4m-8.5-11v5m-2.5-2.5h5"/></svg></span>
+        </a><dialog class="shop-gallery-viewer" aria-label="Фотографии товара">
+        <form method="dialog"><button class="shop-gallery-close" aria-label="Закрыть фото" autofocus><span aria-hidden="true">×</span></button></form>
+        <img alt="" decoding="async">
+
+      </dialog></div>
         <div class="shop-product-summary">
-          <p class="shop-product-kicker">Насосы для пруда</p>
-          <h1 class="shop-product-title">Насос фонтанный QP-45 м³/ч, 45000 л/час, 3000 Вт, макс.напор 16м</h1>
-          <section class="shop-product-section"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">1 шт.</span><span class="shop-offer-price">2 562,22 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
-            <p class="shop-product-date">Данные на 23.11.2026.</p>
+          <section class="shop-product-section shop-product-offers"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">1 шт.</span><span class="shop-offer-price">2 562,22 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
+            <p class="shop-product-date">Данные на <time datetime="2026-11-23">23.11.2026</time>.</p>
           </section>
+          <dl class="shop-product-facts" aria-label="Основные характеристики"><div><dt>Производительность</dt><dd>45000 л/час</dd></div><div><dt>Мощность</dt><dd>3000 Вт</dd></div></dl>
+          <section class="shop-product-fulfillment" aria-label="Как получить товар">
+          <div><h2>Доставка и самовывоз</h2><p>Самовывоз в Минске, ул. Киевская, 12.</p></div>
+          <div class="shop-product-receiving-links"><a href="../index.html#delivery">Условия доставки</a><a href="../index.html#pickup">График самовывоза</a></div>
+        </section>
         </div>
         <div class="shop-product-details">
-          <section class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>Тип насоса</dt><dd>фонтанный</dd></div><div><dt>Мощность</dt><dd>3000 Вт</dd></div><div><dt>Напор</dt><dd>16 м</dd></div><div><dt>Производительность</dt><dd>45000 л/час</dd></div><div><dt>Напряжение</dt><dd>380 В</dd></div><div><dt>Вид установки</dt><dd>погружной</dd></div><div><dt>Страна производитель, бренд</dt><dd>HQ, Китай</dd></div></dl></section>
-          <section class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">QP-45 м³/ч - насос для фонтана.</p>
+          <section id="specifications" class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>Тип насоса</dt><dd>фонтанный</dd></div><div><dt>Мощность</dt><dd>3000 Вт</dd></div><div><dt>Напор</dt><dd>16 м</dd></div><div><dt>Производительность</dt><dd>45000 л/час</dd></div><div><dt>Напряжение</dt><dd>380 В</dd></div><div><dt>Вид установки</dt><dd>погружной</dd></div><div><dt>Страна производитель, бренд</dt><dd>HQ, Китай</dd></div></dl></section>
+          <section id="description" class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">QP-45 м³/ч - насос для фонтана.</p>
 <p class="shop-product-description">Насос для фонтана QP-45м³/ч-16м-3кВт, 380В, погружной
 Профессиональный насос для фонтанов, крупных водопадов, рек, озер и прудов. Используется в погружном виде. Идеален для применения в плавающих фонтанах со специальными поплавками из нашего ассортимента. Соединение фланцевое.</p></section>
         </div>

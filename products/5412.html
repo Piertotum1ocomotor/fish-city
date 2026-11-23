@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="../sections.css?v=10">
   <link rel="stylesheet" href="../catalog.css?v=13">
   <script src="../app.js?v=13" defer></script>
-  <script src="../shop.js?v=13" defer></script>
-  <script src="../product-nav.js?v=13" defer></script>
+  <link rel="stylesheet" href="../shop-product.css?v=14">
+  <script src="../product-nav.js?v=14" defer></script>
 </head>
 <body class="section-page" data-section="product">
   <a class="skip" href="#main">К содержанию</a>
@@ -34,23 +34,41 @@
   </header>
   <main id="main" class="shop-product">
     <div class="wrap">
-      <a class="shop-product-back" href="../catalog.html?category=biopreparaty" data-back-to-catalog="5412">Вернуться в каталог</a>
+      <nav class="shop-product-trail" aria-label="Навигация по каталогу">
+        <a class="shop-product-back" href="../catalog.html?category=biopreparaty" data-back-to-catalog="5412"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 7-5 5 5 5m-5-5h14"/></svg>Вернуться в каталог</a>
+      </nav>
       <div class="shop-product-grid">
-        <div class="shop-product-media"><div class="shop-product-image"><img src="../assets/products/f747ce554d496007d797.webp" alt="Живые бактерии Aqua Forte Bacto Gel, 5л, для пруда до 100000л" decoding="async" fetchpriority="high"></div></div>
-        <div class="shop-product-summary">
-          <p class="shop-product-kicker">Биопрепараты</p>
+        <div class="shop-product-heading">
+          <div class="shop-product-kicker"><a href="../catalog.html?category=biopreparaty">Биопрепараты</a></div>
           <h1 class="shop-product-title">Живые бактерии Aqua Forte Bacto Gel, 5л, для пруда до 100000л</h1>
-          <section class="shop-product-section"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">1 шт.</span><span class="shop-offer-price">229,62 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
-            <p class="shop-product-date">Данные на 23.11.2026.</p>
+        </div>
+        <div class="shop-product-media" data-product-gallery><a class="shop-product-image" data-gallery-open href="../assets/products/f747ce554d496007d797.webp" aria-label="Увеличить фото товара">
+          <img src="../assets/products/f747ce554d496007d797.webp" alt="Живые бактерии Aqua Forte Bacto Gel, 5л, для пруда до 100000л" decoding="async" fetchpriority="high">
+          <span class="shop-product-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="5.7"/><path d="m15 15 4 4m-8.5-11v5m-2.5-2.5h5"/></svg></span>
+        </a><dialog class="shop-gallery-viewer" aria-label="Фотографии товара">
+        <form method="dialog"><button class="shop-gallery-close" aria-label="Закрыть фото" autofocus><span aria-hidden="true">×</span></button></form>
+        <img alt="" decoding="async">
+
+      </dialog></div>
+        <div class="shop-product-summary">
+          <section class="shop-product-section shop-product-offers"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">1 шт.</span><span class="shop-offer-price">229,62 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
+            <p class="shop-product-date">Данные на <time datetime="2026-11-23">23.11.2026</time>.</p>
           </section>
+          <dl class="shop-product-facts" aria-label="Основные характеристики"><div><dt>Предельный объём</dt><dd>до 100 м³</dd></div><div><dt>Бренд</dt><dd>Aqua Forte</dd></div></dl>
+          <section class="shop-product-fulfillment" aria-label="Как получить товар">
+          <div><h2>Доставка и самовывоз</h2><p>Самовывоз в Минске, ул. Киевская, 12.</p></div>
+          <div class="shop-product-receiving-links"><a href="../index.html#delivery">Условия доставки</a><a href="../index.html#pickup">График самовывоза</a></div>
+        </section>
         </div>
         <div class="shop-product-details">
-          <section class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>Размер емкости</dt><dd>5 л</dd></div><div><dt>Для прудов макс. объемом воды</dt><dd>50000-100000 л</dd></div><div><dt>Назначение</dt><dd>живые бактерии для запуска системы фильтрации</dd></div><div><dt>Страна</dt><dd>Нидерланды</dd></div><div><dt>Бренд</dt><dd>Aqua Forte</dd></div></dl></section>
-          <section class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Bacto Gel состоит из живых бактерий, специально разработанных для запуска и поддержания биологической фильтрации за счет эффекта нитрификации, нейтрализации вредные вещества.</p>
+          <section id="specifications" class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>Размер емкости</dt><dd>5 л</dd></div><div><dt>Для прудов макс. объемом воды</dt><dd>50000-100000 л</dd></div><div><dt>Назначение</dt><dd>живые бактерии для запуска системы фильтрации</dd></div><div><dt>Страна</dt><dd>Нидерланды</dd></div><div><dt>Бренд</dt><dd>Aqua Forte</dd></div></dl></section>
+          <section id="description" class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Bacto Gel состоит из живых бактерий, специально разработанных для запуска и поддержания биологической фильтрации за счет эффекта нитрификации, нейтрализации вредные вещества.</p>
 <p class="shop-product-description">Живые бактерии для водоемов и прудов Bacto Gel 5,0 L, 5л на 50-100 м3
 Bacto Gel состоит из живых бактерий, специально разработанных для запуска и поддержания биологической фильтрации за счет эффекта нитрификации, нейтрализации вредные вещества. Bacto Gel используется для фильтрационных систем, в котором гелевая формула позволяет бактериям более эффективно прикрепляться к фильтрующему материалу. Эти бактерии сокращают время запуска системы фильтрации, где процесс, обычно требующий 6…8 недель, сокращен до 2…4 недель. Бактерии Bacto Gel на 100% натуральные и не содержат никаких химических веществ и патогенов.
-Перед применением необходимо проконсультироваться со специалистом.</p></section><details class="catalog-more"><summary>Применение и дозировка</summary><p class="shop-product-description">Для запуска системы фильтрации весной используйте 50 мл препарата на 1 м³ воды в пруду. При профилактике системы фильтрации в течение сезона, например после промывки или очистки фильтрующих элементов, добавьте 20 мл Bacto Gel на 1 м³. В случае помощи системе фильтрации, например когда она не справляется со своими функциями в особо жаркий период времени залейте 100 мл на 1 м³ воды в пруду.
-Перед началом необходимо запустить насос на 2 часа для намокания фильтрующих материалов фильтра, при этом УФ-излучатель не должен работать. Далее выключить насос и вылить Bacto Gel в фильтр. После этого подождать 2 часа и включить насос. УФ-излучатель подключается только через 24 часа после заполнения фильтра бактериями. Для достижения наилучшего эффекта обеспечьте достаточный приток воздуха, чтобы дать бактериям возможность хорошо приклеиться к фильтрующим элементам. Подать воздух можно с помощью аэратора, разместив диффузоры внутрь корпуса фильтра на несколько часов.</p></details><details class="catalog-more"><summary>Срок годности и хранение</summary><p class="shop-product-description">Срок годности и хранение: максимум 6 месяцев после открытия. Хранить в темном, сухом и недоступном для детей месте при температуре от 4 до 32°С. Не допускается замораживание препарата.</p></details>
+Перед применением необходимо проконсультироваться со специалистом.</p></section>
+<details class="catalog-more"><summary>Применение и дозировка</summary><p class="shop-product-description">Для запуска системы фильтрации весной используйте 50 мл препарата на 1 м³ воды в пруду. При профилактике системы фильтрации в течение сезона, например после промывки или очистки фильтрующих элементов, добавьте 20 мл Bacto Gel на 1 м³. В случае помощи системе фильтрации, например когда она не справляется со своими функциями в особо жаркий период времени залейте 100 мл на 1 м³ воды в пруду.
+Перед началом необходимо запустить насос на 2 часа для намокания фильтрующих материалов фильтра, при этом УФ-излучатель не должен работать. Далее выключить насос и вылить Bacto Gel в фильтр. После этого подождать 2 часа и включить насос. УФ-излучатель подключается только через 24 часа после заполнения фильтра бактериями. Для достижения наилучшего эффекта обеспечьте достаточный приток воздуха, чтобы дать бактериям возможность хорошо приклеиться к фильтрующим элементам. Подать воздух можно с помощью аэратора, разместив диффузоры внутрь корпуса фильтра на несколько часов.</p></details>
+<details class="catalog-more"><summary>Срок годности и хранение</summary><p class="shop-product-description">Срок годности и хранение: максимум 6 месяцев после открытия. Хранить в темном, сухом и недоступном для детей месте при температуре от 4 до 32°С. Не допускается замораживание препарата.</p></details>
         </div>
       </div>
     </div>

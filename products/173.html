@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="../sections.css?v=10">
   <link rel="stylesheet" href="../catalog.css?v=13">
   <script src="../app.js?v=13" defer></script>
-  <script src="../shop.js?v=13" defer></script>
-  <script src="../product-nav.js?v=13" defer></script>
+  <link rel="stylesheet" href="../shop-product.css?v=14">
+  <script src="../product-nav.js?v=14" defer></script>
 </head>
 <body class="section-page" data-section="product">
   <a class="skip" href="#main">К содержанию</a>
@@ -34,22 +34,39 @@
   </header>
   <main id="main" class="shop-product">
     <div class="wrap">
-      <a class="shop-product-back" href="../catalog.html?category=korm-dlya-prudovoj-ryby" data-back-to-catalog="173">Вернуться в каталог</a>
+      <nav class="shop-product-trail" aria-label="Навигация по каталогу">
+        <a class="shop-product-back" href="../catalog.html?category=korm-dlya-prudovoj-ryby" data-back-to-catalog="173"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 7-5 5 5 5m-5-5h14"/></svg>Вернуться в каталог</a>
+      </nav>
       <div class="shop-product-grid">
-        <div class="shop-product-media"><div class="shop-product-image"><img src="../assets/products/60eaf9f880799b8d45fc.webp" alt="Корм для рыб COPPENS (SUPREME ASTAX 8,00 mm)" decoding="async" fetchpriority="high"></div></div>
-        <div class="shop-product-summary">
-          <p class="shop-product-kicker">Корм для прудовой рыбы</p>
+        <div class="shop-product-heading">
+          <div class="shop-product-kicker"><a href="../catalog.html?category=korm-dlya-prudovoj-ryby">Корм для прудовой рыбы</a></div>
           <h1 class="shop-product-title">Корм для рыб COPPENS (SUPREME ASTAX 8,00 mm)</h1>
-          <section class="shop-product-section"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">0,5 кг</span><span class="shop-offer-price">15 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li><li><span class="shop-offer-label">1,5 кг</span><span class="shop-offer-price">37,5 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li><li><span class="shop-offer-label">1 кг (от 5кг)</span><span class="shop-offer-price">22 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
-            <p class="shop-product-date">Данные на 23.11.2026.</p>
+        </div>
+        <div class="shop-product-media" data-product-gallery><a class="shop-product-image" data-gallery-open href="../assets/products/60eaf9f880799b8d45fc.webp" aria-label="Увеличить фото товара">
+          <img src="../assets/products/60eaf9f880799b8d45fc.webp" alt="Корм для рыб COPPENS (SUPREME ASTAX 8,00 mm)" decoding="async" fetchpriority="high">
+          <span class="shop-product-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="5.7"/><path d="m15 15 4 4m-8.5-11v5m-2.5-2.5h5"/></svg></span>
+        </a><dialog class="shop-gallery-viewer" aria-label="Фотографии товара">
+        <form method="dialog"><button class="shop-gallery-close" aria-label="Закрыть фото" autofocus><span aria-hidden="true">×</span></button></form>
+        <img alt="" decoding="async">
+
+      </dialog></div>
+        <div class="shop-product-summary">
+          <section class="shop-product-section shop-product-offers"><h2>Цена и наличие</h2><ul class="shop-offers"><li><span class="shop-offer-label">0,5 кг</span><span class="shop-offer-price">15 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li><li><span class="shop-offer-label">1,5 кг</span><span class="shop-offer-price">37,5 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li><li><span class="shop-offer-label">1 кг (от 5кг)</span><span class="shop-offer-price">22 BYN / шт.</span><span class="shop-offer-stock">В наличии</span></li></ul>
+            <p class="shop-product-date">Данные на <time datetime="2026-11-23">23.11.2026</time>.</p>
           </section>
+          <dl class="shop-product-facts" aria-label="Основные характеристики"><div><dt>По плавучести</dt><dd>тонущий</dd></div></dl>
+          <section class="shop-product-fulfillment" aria-label="Как получить товар">
+          <div><h2>Доставка</h2></div>
+          <div class="shop-product-receiving-links"><a href="../index.html#delivery">Условия получения</a></div>
+        </section>
         </div>
         <div class="shop-product-details">
-          <section class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>По плавучести</dt><dd>тонущий</dd></div></dl></section>
-          <section class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Корм для рыб COPPENS (SUPREME ASTAX 8,00 mm) - это тонущий корм, разработанный для разведения и выращивания форели в УЗВ (установках замкнутого водоснабжения).</p>
+          <section id="specifications" class="shop-product-section"><h2>Характеристики</h2><dl class="shop-product-attributes"><div><dt>По плавучести</dt><dd>тонущий</dd></div></dl></section>
+          <section id="description" class="shop-product-section"><h2>Описание</h2><p class="shop-product-description">Корм для рыб COPPENS (SUPREME ASTAX 8,00 mm) - это тонущий корм, разработанный для разведения и выращивания форели в УЗВ (установках замкнутого водоснабжения).</p>
 <p class="shop-product-description">Корм для форели COPPENS SUPREME ASTAX, гранула 8,00 мм предназначен для кормления крупной и взрослой форели, в том числе при выращивании рыбы в УЗВ — установках замкнутого водоснабжения. Крупная гранула диаметром 8 мм подходит для рыбы, которая уже перешла на большие кормовые фракции и способна без труда захватывать такой корм. COPPENS SUPREME ASTAX разработан для интенсивного выращивания форели и подходит для хозяйств, где важно контролировать питание, рост рыбы и качество воды.
 Корм содержит астаксантин — пигмент, который используется в рационах лососевых рыб и способствует формированию характерной окраски мяса форели. Это особенно актуально при товарном выращивании рыбы. В условиях УЗВ кормление необходимо проводить небольшими порциями, ориентируясь на массу рыбы, температуру воды и активность ее питания. Важно следить, чтобы гранулы быстро поедались и не оставались в системе, поскольку избыток несъеденного корма увеличивает нагрузку на фильтрацию и может ухудшать качество воды.
-Корм COPPENS SUPREME ASTAX 8 мм подойдет для рыбоводных хозяйств и ферм, выращивающих крупную форель в УЗВ, бассейнах и других системах интенсивного содержания. Для молоди и небольшой форели следует выбирать более мелкую фракцию, а гранулу 8 мм использовать после того, как рыба достигнет подходящего размера. Правильный подбор размера гранулы и нормы кормления помогает снизить потери корма, поддерживать стабильные условия в УЗВ и организовать эффективное ежедневное кормление форели.</p></section><details class="catalog-more"><summary>Состав</summary><p class="shop-product-description">Состав: 43–45% сырого протеина, 23–25% жиров, а также комплекс витаминов и натуральный пигмент астаксантин для улучшения здоровья и окраски рыбы (преимущественно форели).</p></details>
+Корм COPPENS SUPREME ASTAX 8 мм подойдет для рыбоводных хозяйств и ферм, выращивающих крупную форель в УЗВ, бассейнах и других системах интенсивного содержания. Для молоди и небольшой форели следует выбирать более мелкую фракцию, а гранулу 8 мм использовать после того, как рыба достигнет подходящего размера. Правильный подбор размера гранулы и нормы кормления помогает снизить потери корма, поддерживать стабильные условия в УЗВ и организовать эффективное ежедневное кормление форели.</p></section>
+<details class="catalog-more"><summary>Состав</summary><p class="shop-product-description">Состав: 43–45% сырого протеина, 23–25% жиров, а также комплекс витаминов и натуральный пигмент астаксантин для улучшения здоровья и окраски рыбы (преимущественно форели).</p></details>
         </div>
       </div>
     </div>
