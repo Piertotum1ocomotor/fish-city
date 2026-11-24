@@ -58,7 +58,6 @@ if (!reducedMotion.matches && 'IntersectionObserver' in window) {
 
 const volumeNumber = new Intl.NumberFormat('ru-BY', { maximumFractionDigits: 3 });
 const wholeNumber = new Intl.NumberFormat('ru-BY', { maximumFractionDigits: 0 });
-const moneyNumber = new Intl.NumberFormat('ru-BY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 function readNumber(input, { min, max, whole = false }) {
   const raw = input.value.trim();
@@ -191,46 +190,41 @@ function setupPondForm() {
 }
 
 function setupCrayfishForm() {
-  const crayfishForm = document.getElementById('crayfish-form');
-  if (!crayfishForm) return;
-  const crayfishError = document.getElementById('crayfish-error');
-  const crayfishResult = document.getElementById('crayfish-result');
-  const crayfishBudget = document.getElementById('crayfish-budget');
+  const form = document.getElementById('crayfish-form');
+  if (!form) return;
+  const guests = form.elements.namedItem('guests');
+  const error = document.getElementById('crayfish-error');
+  const sideResult = document.getElementById('crayfish-side-result');
+  const mainResult = document.getElementById('crayfish-main-result');
+  const status = document.getElementById('crayfish-status');
 
-  function showCrayfishWeight(focus) {
-    const guests = crayfishForm.elements.namedItem('guests');
-    const portion = crayfishForm.elements.namedItem('portion');
-    const price = crayfishForm.elements.namedItem('price');
+  function showCrayfishWeight(announce = false) {
     const guestCount = readNumber(guests, { min: 1, max: 999, whole: true });
-    const grams = readNumber(portion, { min: 1, max: 9999, whole: true });
-    const cost = price.value.trim() === '' ? 0 : readNumber(price, { min: 0.001, max: 100000 });
-    const invalid = [
-      [guestCount, guests, 'Введите целое число гостей от 1 до 999.'],
-      [grams, portion, 'Введите размер порции целым числом от 1 до 9999 г.'],
-      [cost, price, 'Введите цену больше 0 и не выше 100 000 BYN за кг или оставьте поле пустым.'],
-    ].find(([value]) => value === null);
-
-    if (invalid) {
-      setInvalid(crayfishForm, crayfishError, invalid[1], invalid[2], focus);
-      crayfishResult.textContent = '—';
-      crayfishBudget.hidden = true;
-      crayfishBudget.textContent = '';
+    if (guestCount === null) {
+      const message = 'Введите целое число гостей от 1 до 999.';
+      setInvalid(form, error, guests, message, false);
+      sideResult.textContent = '—';
+      mainResult.textContent = '—';
+      if (announce) status.textContent = message;
       return;
     }
 
-    setInvalid(crayfishForm, crayfishError, null, '', false);
-    const kilograms = guestCount * grams / 1000;
-    crayfishResult.textContent = volumeNumber.format(kilograms) + ' кг';
-    crayfishBudget.hidden = cost === 0;
-    crayfishBudget.textContent = cost === 0 ? '' : 'Ориентир по бюджету: ' + moneyNumber.format(cost * kilograms) + ' BYN';
+    setInvalid(form, error, null, '', false);
+    const sideWeight = volumeNumber.format(guestCount * 0.5) + ' кг';
+    const mainWeight = volumeNumber.format(guestCount) + ' кг';
+    sideResult.textContent = sideWeight;
+    mainResult.textContent = mainWeight;
+    if (announce) status.textContent = `Если есть другие блюда — ${sideWeight}. Если раки — главное блюдо, ${mainWeight}.`;
   }
 
-  crayfishForm.addEventListener('submit', (event) => {
+  form.addEventListener('submit', (event) => {
     event.preventDefault();
     showCrayfishWeight(true);
   });
-  clearOnEdit(crayfishForm, crayfishError, crayfishResult, crayfishBudget, true);
-  showCrayfishWeight(false);
+  guests.addEventListener('input', () => showCrayfishWeight(true));
+  showCrayfishWeight();
+  form.hidden = false;
+  document.getElementById('crayfish-example').hidden = true;
 }
 
 function clearOnEdit(form, error, output, detail, detailShouldBeHidden, onEdit) {

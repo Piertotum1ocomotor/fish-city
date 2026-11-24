@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Подберите размер раков и рассчитайте вес на компанию. Наличие и получение к нужной дате можно уточнить у Fish City.">
+  <meta name="description" content="Живые раки для самостоятельной варки и готовые раки по рецепту Fish City. Сравните размеры и рассчитайте вес на компанию. Доставка по Беларуси и самовывоз в Минске.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#052b72">
-  <title>Живые и варёные раки — Fish City</title>
+  <title>Живые и варёные раки с доставкой в Минске | Fish City</title>
   <link rel="stylesheet" href="styles.css?v=10">
   <link rel="stylesheet" href="sections.css?v=10">
   <link rel="stylesheet" href="catalog.css?v=13">
-  <link rel="stylesheet" href="section-showcase.css?v=15">
-  <script src="app.js?v=13" defer></script>
+  <link rel="stylesheet" href="section-showcase.css?v=16">
+  <link rel="stylesheet" href="section-guides.css?v=1">
+  <script src="app.js?v=14" defer></script>
   <script src="banner-video.js?v=3" defer></script>
 </head>
 <body class="section-page section-page-showcase" data-section="crayfish">
@@ -43,7 +44,7 @@
             <h1 id="page-title">Живые и варёные раки</h1>
             <p>Сравните размеры и цены живых и варёных раков. Доставка по Беларуси и самовывоз в Минске.</p>
             <div class="actions">
-              <a class="button button-dark" href="#examples">Выбрать размер</a>
+              <a class="button button-dark" href="catalog.html?category=zhivye-i-varenye-raki">Каталог раков</a>
               <a class="text-link" href="#crayfish-calculator">Рассчитать на компанию</a>
             </div>
           </div>
@@ -59,6 +60,7 @@
         <h2 id="selection-title">Раки по размеру</h2>
         <a class="showcase-header-link" id="shop-live-crayfish" href="catalog.html?category=zhivye-i-varenye-raki">Весь каталог раков</a>
       </div>
+      <p class="section-guide-intro">Вес одного рака указан в названии. Чтобы сравнить размеры, смотрите, сколько штук примерно приходится на килограмм.</p>
       <section class="showcase-group" id="live-crayfish" aria-labelledby="live-crayfish-title">
         <div class="showcase-group-header">
           <h3 id="live-crayfish-title">Живые или варёные на выбор</h3>
@@ -155,37 +157,67 @@
         </ul>
       </section>
       <div class="showcase-footer">
-        <p>Цены по данным на <time datetime="2026-11-23">23.11.2026</time>.</p>
         <a class="button button-blue" href="catalog.html?category=zhivye-i-varenye-raki">Весь каталог раков</a>
       </div>
     </section>
-    <div class="wrap section-extra"><section id="crayfish-calculator" class="calculator crayfish-calculator" aria-labelledby="crayfish-form-title">
-        <div class="calc-about">
+    <section id="crayfish-calculator" class="crayfish-weight" aria-labelledby="crayfish-form-title">
+      <div class="wrap section-guide-layout">
+        <header class="section-guide-heading">
           <h2 id="crayfish-form-title">Сколько раков взять на компанию?</h2>
-          <p>Укажите число гостей и желаемую порцию. Если знаете цену за килограмм, добавьте её, чтобы оценить бюджет.</p>
-        </div>
-        <form id="crayfish-form" novalidate>
-          <div class="form-grid">
-            <label>Гостей<input name="guests" type="text" inputmode="numeric" value="4" maxlength="3" required></label>
-            <label>Граммов на человека<input name="portion" type="text" inputmode="numeric" value="500" maxlength="4" required></label>
-            <label>Цена, BYN/кг <span class="optional">по желанию</span><input name="price" type="text" inputmode="decimal" placeholder="Например, 100" maxlength="12"></label>
+          <p>Вес ориентировочный. Выберите результат с учётом того, что ещё будет на столе.</p>
+        </header>
+        <div class="section-guide-body">
+          <form id="crayfish-form" novalidate hidden>
+            <label class="crayfish-guests" for="crayfish-guests">
+              Сколько гостей?
+              <input id="crayfish-guests" name="guests" type="text" inputmode="numeric" value="4" required>
+            </label>
+            <p class="form-error" id="crayfish-error"></p>
+            <dl class="crayfish-weight-results">
+              <div>
+                <dt>Есть другие блюда</dt>
+                <dd id="crayfish-side-result">2 кг</dd>
+              </div>
+              <div>
+                <dt>Раки — главное блюдо</dt>
+                <dd id="crayfish-main-result">4 кг</dd>
+              </div>
+            </dl>
+            <p class="crayfish-status" id="crayfish-status" role="status" aria-atomic="true"></p>
+          </form>
+          <div class="crayfish-weight-example" id="crayfish-example">
+            <p>На 4 гостей — примерно 2 кг, если есть другие блюда, или 4 кг, если раки — главное блюдо.</p>
+            <p>На 10 гостей — примерно 5 или 10 кг соответственно.</p>
           </div>
-          <p class="form-error" id="crayfish-error" aria-live="polite"></p>
-          <button class="button button-blue" type="submit">Рассчитать вес</button>
-          <div class="output-panel crayfish-output" aria-live="polite" aria-atomic="true">
-            <p>На компанию</p>
-            <output id="crayfish-result" form="crayfish-form">2 кг</output>
-            <span id="crayfish-budget" hidden></span>
-          </div>
-        </form>
-      </section></div>
-    <section class="wrap section-extra" id="crayfish-inquiry" aria-labelledby="help-title">
-      <div class="section-help">
-        <div>
-          <h2 id="help-title">Доставка и самовывоз раков</h2>
-          <p>Доставка по Беларуси и самовывоз в Минске на ул. Киевской, 12.</p>
+          <a class="text-link" href="catalog.html?category=zhivye-i-varenye-raki">Подобрать размер раков в каталоге</a>
         </div>
-        <div class="actions"><a class="button button-blue" href="index.html#delivery">Условия получения</a></div>
+      </div>
+    </section>
+    <section class="section-guide" id="crayfish-inquiry" aria-labelledby="crayfish-guide-title">
+      <div class="wrap section-guide-layout">
+        <header class="section-guide-heading">
+          <h2 id="crayfish-guide-title">Каких раков выбрать к столу</h2>
+          <p>Выберите способ приготовления и размер, затем согласуйте вес и время получения.</p>
+        </header>
+        <div class="section-guide-body">
+          <div class="section-guide-item">
+            <h3>Живые для варки, варёные для подачи</h3>
+            <p>Живых раков выбирают для самостоятельного приготовления. К ним есть готовая смесь специй. Варёных можно сразу подавать: Fish City готовит их с укропом, душистым перцем, лавровым листом и сушёным апельсином.</p>
+            <a class="text-link" href="#cooked-crayfish">Посмотреть варёных раков</a>
+          </div>
+          <div class="section-guide-item">
+            <h3>Сколько раков в килограмме</h3>
+            <p>В килограмме примерно 35 мелких раков (20–40 г), 20 средних (40–60 г), 15 крупных (60–80 г), 12 отборных (80–100 г) или 9 королевских (от 100 г). Чем крупнее раки, тем меньше штук в заказе того же веса.</p>
+            <a class="text-link" href="#examples">Сравнить размеры</a>
+            <a class="text-link" href="products/2051.html?category=zhivye-i-varenye-raki">Королевские раки от 100 г</a>
+          </div>
+          <div class="section-guide-item">
+            <h3>Самовывоз и доставка к нужной дате</h3>
+            <p>Раков можно забрать в Минске на ул. Киевской, 12 или заказать с доставкой по Беларуси. Если заказываете к застолью, заранее сообщите желаемые время, размер и вес.</p>
+            <a class="text-link" href="index.html#pickup">Адрес и время самовывоза</a>
+            <a class="text-link" href="index.html#delivery">Условия доставки</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>

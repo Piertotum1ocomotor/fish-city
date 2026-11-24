@@ -29,6 +29,8 @@
   const hasVolume = Number.isFinite(volume) && volume > 0 && volume <= 100000000;
   const hasDepth = Number.isFinite(depth) && depth > 0 && depth <= 100;
   const equipment = 'oborudovanie-dlya-pruda';
+  const crayfish = 'zhivye-i-varenye-raki';
+  const cookedCrayfish = 'varenye-raki';
   const pondCatalog = { id: 'vse-dlya-pruda', title: 'Всё для пруда' };
   const pondCategories = [
     'ryba-dlya-pruda', 'dekorativnaya-ryba-dlya-pruda', equipment,
@@ -76,7 +78,7 @@
   async function start() {
     const response = await fetch('catalog-data.json?v=14');
     if (!response.ok) throw new Error('Catalog data unavailable');
-    const { categories, products, asOf } = await response.json();
+    const { categories, products } = await response.json();
     const byCategory = new Map(categories.map(category => [category.id, category]));
     const children = new Map();
     for (const category of categories) {
@@ -87,6 +89,9 @@
     for (const branch of children.values()) branch.sort((a, b) => collation.compare(a.title, b.title));
     byCategory.set(pondCatalog.id, pondCatalog);
     children.set(pondCatalog.id, pondCategories.map(id => byCategory.get(id)).filter(Boolean));
+    if (byCategory.has(cookedCrayfish) && byCategory.get(cookedCrayfish).parentId !== crayfish) {
+      children.set(crayfish, [...(children.get(crayfish) || []), byCategory.get(cookedCrayfish)]);
+    }
 
     function lineage(id) {
       const path = [];
@@ -107,13 +112,14 @@
       const categoryWords = [...ancestors].map(id => byCategory.get(id).title).join(' ');
       const terms = searchWords([categoryWords, product.brand, ...product.facts].filter(Boolean).join(' '));
       if (pondCategories.some(id => ancestors.has(id))) ancestors.add(pondCatalog.id);
+      if (ancestors.has(cookedCrayfish)) ancestors.add(crayfish);
       return { product, ancestors, label, model, haystack: [label, model, terms].join(' ') };
     });
     index.sort((a, b) => collation.compare(a.product.title, b.product.title));
     const byProduct = new Map(index.map(item => [item.product.id, item]));
     const rootOrder = [
       'ryba-dlya-pruda', equipment, 'dekorativnaya-ryba-dlya-pruda', 'rasteniya-dlya-pruda',
-      'korm-dlya-ryb', 'zhivye-i-varenye-raki', 'ryba-i-moreprodukty', 'zhivec',
+      'korm-dlya-ryb', crayfish, 'ryba-i-moreprodukty', 'zhivec',
       'sedobnye-podarochnye-kompoziczii',
     ];
     const roots = rootOrder.map(id => byCategory.get(id)).filter(Boolean);
@@ -507,7 +513,6 @@
         title.focus({ preventScroll: true });
       });
     }
-    if (asOf) el('[data-catalog-date]').textContent = 'Демонстрационная версия · Данные на ' + asOf.split('-').reverse().join('.');
     for (const selector of ['[data-search]', '[data-controls]', '[data-filters]']) el(selector).hidden = false;
     render(false);
     if (location.hash.startsWith('#product-')) {
