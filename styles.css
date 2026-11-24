@@ -130,7 +130,6 @@ h1, h2, h3, h4 { font-family: var(--display-font); font-weight: 750; text-wrap: 
 .link-arrow::before, .link-arrow::after { content: ''; position: absolute; }
 .link-arrow::before { top: 5px; left: 0; width: 13px; border-top: 1.5px solid; }
 .link-arrow::after { top: 2px; right: 1px; width: 7px; height: 7px; border-top: 1.5px solid; border-right: 1.5px solid; transform: rotate(45deg); }
-.hero .button .link-arrow { margin-inline-start: 10px; }
 .button:is(:hover, :focus-visible) .link-arrow { translate: 3px 0; }
 
 .section { padding-block: clamp(65px, 7.5vw, 112px); }
@@ -339,7 +338,6 @@ h1, h2, h3, h4 { font-family: var(--display-font); font-weight: 750; text-wrap: 
   .wrap { width: calc(100% - 32px); }
   .hero .button { min-height: 46px; padding-inline: 13px; font-size: .875rem; }
   .hero-actions .text-link { font-size: .875rem; }
-  .hero .button .link-arrow { display: none; }
   .category p { font-size: .94rem; }
   .form-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .form-grid > label:last-child { grid-column: 1 / -1; }
