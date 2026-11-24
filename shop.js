@@ -159,6 +159,7 @@
     el('[data-pond-volume]').textContent = hasVolume ? formatNumber.format(volume) + ' м³' : '';
 
     function rootCategory() {
+      if (selected === cookedCrayfish && byCategory.has(crayfish)) return crayfish;
       return lineage(selected).at(-1)?.id || '';
     }
 
@@ -201,7 +202,9 @@
         if (root === category.id) link.setAttribute('aria-current', 'true');
         return link;
       }));
-      const path = lineage(selected).reverse();
+      const path = selected === cookedCrayfish && root === crayfish
+        ? [byCategory.get(crayfish), byCategory.get(cookedCrayfish)]
+        : lineage(selected).reverse();
       const crumbs = el('[data-category-path]');
       crumbs.hidden = !path.length;
       crumbs.replaceChildren(...[linkToCategory('', 'Каталог'), ...path.slice(0, -1).map(category =>

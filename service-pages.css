@@ -20,6 +20,7 @@
 }
 
 .service-intro .section-hero-image {
+  width: 100%;
   min-height: clamp(270px, 29vw, 425px);
   border-radius: 0;
 }
