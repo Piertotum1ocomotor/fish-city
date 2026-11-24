@@ -10,10 +10,11 @@
   <link rel="stylesheet" href="styles.css?v=10">
   <link rel="stylesheet" href="sections.css?v=10">
   <link rel="stylesheet" href="catalog.css?v=13">
+  <link rel="stylesheet" href="section-showcase.css?v=15">
   <script src="app.js?v=13" defer></script>
   <script src="banner-video.js?v=3" defer></script>
 </head>
-<body class="section-page" data-section="pond">
+<body class="section-page section-page-showcase" data-section="pond">
   <a class="skip" href="#main">К содержанию</a>
   <header class="site-header">
     <div class="wrap header-inner">
@@ -40,9 +41,9 @@
         <div class="section-hero">
           <div class="section-hero-copy">
             <h1 id="page-title">Всё для пруда</h1>
-            <p>Рыба, оборудование, водные растения и корм для вашего водоёма. Начните с нужной категории или рассчитайте объём, если планируете обустройство.</p>
+            <p>Рыба для зарыбления, кои, водные растения, корм и оборудование для вашего водоёма.</p>
             <div class="actions">
-              <a class="button button-dark" href="#examples">Выбрать категорию</a>
+              <a class="button button-dark" href="#examples">Смотреть товары</a>
               <a class="text-link" href="index.html#pond-calculator">Рассчитать объём</a>
             </div>
           </div>
@@ -53,33 +54,112 @@
         </div>
       </div>
     </section>
-    <section class="wrap section-product-area" id="examples" aria-labelledby="selection-title">
-      <div class="catalog-list-head">
-        <h2 id="selection-title">Категории товаров для пруда</h2>
+    <section class="wrap section-showcase" id="examples" aria-labelledby="selection-title">
+      <div class="showcase-header">
+        <h2 id="selection-title">Товары для пруда</h2>
+        <a class="showcase-header-link" href="catalog.html?category=vse-dlya-pruda">Весь ассортимент для пруда</a>
       </div>
-      <ul class="catalog-tiles">
-          <li id="fish"><a class="catalog-tile" id="shop-fish" href="catalog.html?category=ryba-dlya-pruda">
-            <img src="assets/sample-carp.webp" alt="" width="96" height="80" loading="lazy" decoding="async">
-            <span><strong>Рыба для пруда</strong><small>Смотреть товары</small></span>
-          </a></li>
-          <li id="koi"><a class="catalog-tile" id="shop-koi" href="catalog.html?category=dekorativnaya-ryba-dlya-pruda">
-            <img src="assets/films/veiltail-koi.webp" alt="" width="96" height="80" loading="lazy" decoding="async">
-            <span><strong>Декоративная рыба</strong><small>Смотреть товары</small></span>
-          </a></li>
-          <li id="equipment"><a class="catalog-tile" id="shop-equipment" href="catalog.html?category=oborudovanie-dlya-pruda">
-            <img src="assets/equipment.webp" alt="" width="96" height="80" loading="lazy" decoding="async">
-            <span><strong>Оборудование для пруда</strong><small>Смотреть товары</small></span>
-          </a></li>
-          <li id="plants"><a class="catalog-tile" id="shop-plants" href="catalog.html?category=rasteniya-dlya-pruda">
-            <img src="assets/films/lilies.webp" alt="" width="96" height="80" loading="lazy" decoding="async">
-            <span><strong>Водные растения</strong><small>Смотреть товары</small></span>
-          </a></li>
-          <li id="feed"><a class="catalog-tile" id="shop-feed" href="catalog.html?category=korm-dlya-ryb">
-            <img src="assets/feed.webp" alt="" width="96" height="80" loading="lazy" decoding="async">
-            <span><strong>Корм для рыб</strong><small>Смотреть товары</small></span>
-          </a></li>
+      <nav class="showcase-categories" aria-label="Категории раздела">
+        <ul role="list">
+          <li id="fish"><a id="shop-fish" href="catalog.html?category=ryba-dlya-pruda">Прудовая рыба</a></li>
+          <li id="koi"><a id="shop-koi" href="catalog.html?category=dekorativnaya-ryba-dlya-pruda">Декоративная рыба</a></li>
+          <li id="equipment"><a id="shop-equipment" href="catalog.html?category=oborudovanie-dlya-pruda">Оборудование</a></li>
+          <li id="plants"><a id="shop-plants" href="catalog.html?category=rasteniya-dlya-pruda">Водные растения</a></li>
+          <li id="feed"><a id="shop-feed" href="catalog.html?category=korm-dlya-ryb">Корм</a></li>
+        </ul>
+      </nav>
+      <ul class="showcase-grid" role="list">
+        <li class="showcase-item">
+          <a class="showcase-card" href="products/104.html?category=vse-dlya-pruda">
+            <div class="showcase-card-image"><img src="assets/products/058df7541e5a24b72192.webp" alt="" loading="lazy" decoding="async"></div>
+            <div class="showcase-card-copy">
+              <p class="showcase-card-category">Прудовая рыба</p>
+              <h3>Карп</h3>
+              <p class="showcase-card-fact">3 размера</p>
+              <p class="showcase-card-price">от 1,5 BYN / шт.</p>
+            </div>
+          </a>
+        </li>
+        <li class="showcase-item">
+          <a class="showcase-card" href="products/1247.html?category=vse-dlya-pruda">
+            <div class="showcase-card-image"><img src="assets/products/b2d6cc3a9e54f6499741.webp" alt="" loading="lazy" decoding="async"></div>
+            <div class="showcase-card-copy">
+              <p class="showcase-card-category">Оборудование</p>
+              <h3>УФ стерилизатор CUV-J40, 40Вт, 220В, для пруда до 40000л</h3>
+              <p class="showcase-card-fact">До 40 м³</p>
+              <p class="showcase-card-price">314,5 BYN / шт.</p>
+            </div>
+          </a>
+        </li>
+        <li class="showcase-item">
+          <a class="showcase-card" href="products/3106.html?category=vse-dlya-pruda">
+            <div class="showcase-card-image"><img src="assets/products/e98b1dd172cb950ab3bb.webp" alt="" loading="lazy" decoding="async"></div>
+            <div class="showcase-card-copy">
+              <p class="showcase-card-category">Декоративная рыба</p>
+              <h3>Карп кои 12-15 см, трехцветные</h3>
+              <p class="showcase-card-price">50 BYN / шт.</p>
+            </div>
+          </a>
+        </li>
+        <li class="showcase-item">
+          <a class="showcase-card" href="products/3612.html?category=vse-dlya-pruda">
+            <div class="showcase-card-image"><img src="assets/products/a6ef0bb465681a902724.webp" alt="" loading="lazy" decoding="async"></div>
+            <div class="showcase-card-copy">
+              <p class="showcase-card-category">Водные растения</p>
+              <h3>Белокрыльник (Калла болотная)</h3>
+              <p class="showcase-card-fact">Цветёт в мае–июне</p>
+              <p class="showcase-card-price">16,2 BYN / шт.</p>
+            </div>
+          </a>
+        </li>
+        <li class="showcase-item">
+          <a class="showcase-card" href="products/13.html?category=vse-dlya-pruda">
+            <div class="showcase-card-image"><img src="assets/products/57e3482cc0ba0f6624c3.webp" alt="" loading="lazy" decoding="async"></div>
+            <div class="showcase-card-copy">
+              <p class="showcase-card-category">Прудовая рыба</p>
+              <h3>Белый амур</h3>
+              <p class="showcase-card-fact">4 размера</p>
+              <p class="showcase-card-price">от 4,05 BYN / шт.</p>
+            </div>
+          </a>
+        </li>
+        <li class="showcase-item">
+          <a class="showcase-card" href="products/1443.html?category=vse-dlya-pruda">
+            <div class="showcase-card-image"><img src="assets/products/452233ee3b3679b7f48d.webp" alt="" loading="lazy" decoding="async"></div>
+            <div class="showcase-card-copy">
+              <p class="showcase-card-category">Оборудование</p>
+              <h3>Аэратор диафрагменный HI-BLOW HAP-60, 60 л/мин, 45Вт</h3>
+              <p class="showcase-card-fact">Hailea</p>
+              <p class="showcase-card-price">407 BYN / шт.</p>
+            </div>
+          </a>
+        </li>
+        <li class="showcase-item">
+          <a class="showcase-card" href="products/140.html?category=vse-dlya-pruda">
+            <div class="showcase-card-image"><img src="assets/products/cf72a3ce118d83c8505c.webp" alt="" loading="lazy" decoding="async"></div>
+            <div class="showcase-card-copy">
+              <p class="showcase-card-category">Водные растения</p>
+              <h3>Нимфея “Роуз Эрей”</h3>
+              <p class="showcase-card-price">30 BYN / шт.</p>
+            </div>
+          </a>
+        </li>
+        <li class="showcase-item">
+          <a class="showcase-card" href="products/380.html?category=vse-dlya-pruda">
+            <div class="showcase-card-image"><img src="assets/products/32023e61ecba899ea708.webp" alt="" loading="lazy" decoding="async"></div>
+            <div class="showcase-card-copy">
+              <p class="showcase-card-category">Корм</p>
+              <h3>Корм для рыб Tetra Koi Sticks</h3>
+              <p class="showcase-card-fact">Фасовка 0,3 или 7,5 кг</p>
+              <p class="showcase-card-price">от 18 BYN / шт.</p>
+            </div>
+          </a>
+        </li>
       </ul>
-      <a class="catalog-full-link" href="catalog.html">Все разделы каталога</a>
+      <div class="showcase-footer">
+        <p>Цены по данным на <time datetime="2026-11-23">23.11.2026</time>.</p>
+        <a class="button button-blue" href="catalog.html?category=vse-dlya-pruda">Весь ассортимент для пруда</a>
+      </div>
     </section>
 
     <section class="wrap section-extra" aria-labelledby="help-title">

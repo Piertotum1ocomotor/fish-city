@@ -29,6 +29,11 @@
   const hasVolume = Number.isFinite(volume) && volume > 0 && volume <= 100000000;
   const hasDepth = Number.isFinite(depth) && depth > 0 && depth <= 100;
   const equipment = 'oborudovanie-dlya-pruda';
+  const pondCatalog = { id: 'vse-dlya-pruda', title: 'Всё для пруда' };
+  const pondCategories = [
+    'ryba-dlya-pruda', 'dekorativnaya-ryba-dlya-pruda', equipment,
+    'rasteniya-dlya-pruda', 'korm-dlya-ryb',
+  ];
   const compatibleCategories = ['aeratory-dlya-pruda', 'filtry-dlya-pruda', 'uf-sterilizatory'];
   const sortByPrice = value => value === 'price-asc' || value === 'price-desc';
   const formatNumber = new Intl.NumberFormat('ru-BY', { maximumFractionDigits: 3 });
@@ -80,6 +85,8 @@
       children.get(parent).push(category);
     }
     for (const branch of children.values()) branch.sort((a, b) => collation.compare(a.title, b.title));
+    byCategory.set(pondCatalog.id, pondCatalog);
+    children.set(pondCatalog.id, pondCategories.map(id => byCategory.get(id)).filter(Boolean));
 
     function lineage(id) {
       const path = [];
@@ -99,6 +106,7 @@
       const model = searchWords(product.search || '');
       const categoryWords = [...ancestors].map(id => byCategory.get(id).title).join(' ');
       const terms = searchWords([categoryWords, product.brand, ...product.facts].filter(Boolean).join(' '));
+      if (pondCategories.some(id => ancestors.has(id))) ancestors.add(pondCatalog.id);
       return { product, ancestors, label, model, haystack: [label, model, terms].join(' ') };
     });
     index.sort((a, b) => collation.compare(a.product.title, b.product.title));
@@ -182,7 +190,7 @@
       }
       el('[data-extras]').replaceChildren(...extraDepartments.map(([id, label]) => linkToCategory(id, label)));
       const directions = el('[data-root-categories]');
-      directions.replaceChildren(linkToCategory('', 'Все товары'), ...roots.map(category => {
+      directions.replaceChildren(linkToCategory('', 'Все товары'), ...[pondCatalog, ...roots].map(category => {
         const link = linkToCategory(category.id, category.title);
         if (root === category.id) link.setAttribute('aria-current', 'true');
         return link;
@@ -384,7 +392,7 @@
       if (sortByPrice(sort.value) && !canPriceSort) sort.value = '';
       if (normalized && !sort.value) {
         results.sort((a, b) => relevance(a, normalized, words) - relevance(b, normalized, words));
-      } else if (!selected && !sort.value) {
+      } else if ((!selected || selected === pondCatalog.id) && !sort.value) {
         results.sort((a, b) => browseOrder.get(a) - browseOrder.get(b));
       } else if (sort.value === 'available') {
         results.sort((a, b) => Number(b.product.available) - Number(a.product.available));
@@ -408,7 +416,7 @@
       el('.fish-catalog').toggleAttribute('data-refined', refined);
       el('[data-departments]').hidden = refined;
       el('[data-extras]').hidden = refined;
-      el('[data-setup-link]').hidden = root !== equipment || volumeActive;
+      el('[data-setup-link]').hidden = (root !== equipment && root !== pondCatalog.id) || volumeActive;
       el('[data-clear-query]').hidden = !input.value;
       title.textContent = titleText;
       status.textContent = 'Найдено: ' + results.length;
@@ -503,7 +511,9 @@
     for (const selector of ['[data-search]', '[data-controls]', '[data-filters]']) el(selector).hidden = false;
     render(false);
     if (location.hash.startsWith('#product-')) {
-      document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: 'instant' });
+      const target = document.getElementById(location.hash.slice(1));
+      if (target) target.scrollIntoView({ behavior: 'instant' });
+      else history.replaceState(history.state, '', location.pathname + location.search);
     }
   }
 

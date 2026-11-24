@@ -1,0 +1,184 @@
+.section-page-showcase .section-intro {
+  padding-bottom: clamp(24px, 3.5vw, 48px);
+}
+
+.section-page-showcase .section-hero-image {
+  min-height: clamp(225px, 26vw, 340px);
+}
+
+.section-showcase {
+  color: var(--navy);
+  padding-block: clamp(32px, 4.5vw, 64px);
+}
+
+.showcase-header,
+.showcase-group-header,
+.showcase-footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+}
+
+.showcase-header h2 {
+  font-size: clamp(1.75rem, 4vw, 3.3rem);
+  line-height: 1.05;
+  letter-spacing: -.045em;
+}
+
+.showcase-header-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--blue);
+  font-weight: 750;
+  text-underline-offset: .19em;
+}
+
+.showcase-categories ul,
+.showcase-grid {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.showcase-categories ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.showcase-categories a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--ice);
+  font-size: .925rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.showcase-categories a:is(:hover, :focus-visible) { color: var(--blue); }
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(8px, 1.35vw, 18px);
+  margin-top: clamp(16px, 2.2vw, 27px);
+}
+
+.section-page-showcase[data-section="seafood"] .showcase-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.showcase-item { min-width: 0; }
+
+.showcase-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: clamp(10px, 1.35vw, 16px);
+  background: var(--paper);
+  text-decoration: none;
+  transition: border-color .2s ease;
+}
+
+.showcase-card:is(:hover, :focus-visible) { border-color: var(--blue); }
+
+.showcase-card-image {
+  --showcase-image-inset: clamp(5px, .8vw, 12px);
+  position: relative;
+  flex: none;
+  width: 100%;
+  aspect-ratio: 1.55;
+  background: #f0f4fb;
+}
+
+.showcase-card-image img {
+  position: absolute;
+  inset: var(--showcase-image-inset);
+  width: calc(100% - var(--showcase-image-inset) * 2);
+  height: calc(100% - var(--showcase-image-inset) * 2);
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.showcase-card-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  padding: clamp(9px, 1.5vw, 18px);
+  overflow-wrap: anywhere;
+}
+
+.showcase-card-category,
+.showcase-card-fact,
+.showcase-footer p {
+  color: var(--muted);
+  font-size: .875rem;
+  line-height: 1.35;
+}
+
+.showcase-card :is(h3, h4) {
+  margin: 0;
+  color: var(--deep);
+  font-size: clamp(1rem, 1.65vw, 1.38rem);
+  line-height: 1.17;
+  letter-spacing: -.022em;
+}
+
+.showcase-card-price {
+  margin-top: auto;
+  padding-top: 4px;
+  font-size: clamp(.95rem, 1.6vw, 1.24rem);
+  font-weight: 800;
+  line-height: 1.22;
+}
+
+.showcase-group { margin-top: clamp(17px, 3vw, 40px); }
+.showcase-group-header h3 { font-size: clamp(1.15rem, 2vw, 1.6rem); }
+.showcase-group .showcase-grid { margin-top: 9px; }
+
+.showcase-footer {
+  align-items: center;
+  gap: 12px;
+  margin-top: clamp(16px, 2.4vw, 29px);
+}
+
+@media (max-width: 900px) {
+  .section-page-showcase .section-hero-image {
+    min-height: 0;
+    aspect-ratio: 2.4;
+  }
+}
+
+@media (max-width: 700px) {
+  .section-page-showcase .showcase-grid,
+  .section-page-showcase[data-section="seafood"] .showcase-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section-page-showcase .section-crumbs { margin-bottom: 6px; }
+  .section-page-showcase .section-hero { gap: 14px; }
+  .section-page-showcase .section-hero h1 { font-size: clamp(2rem, 10cqi, 3.45rem); }
+
+  .section-page-showcase .section-hero-copy p {
+    margin-block: 10px 12px;
+    line-height: 1.4;
+  }
+
+  .section-page-showcase .section-hero-image { aspect-ratio: 2.15; }
+  .showcase-categories a { padding-inline: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-card { transition: none; }
+}
